@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="./styles/styles.css">
+  <script type="module" src="./scripts/index.js" defer></script>
+
+  <title>Правда или ложь?</title>
+</head>
+
+<body class="root">
+  <section class="main">
+    <h1 class="main__head-text">Правда или ложь?</h1>
+    <p class="main__question-text"></p>
+    <div class="main__button-section">
+      <button type="button" class="button button_type_positive">Правда</button>
+      <button type="button" class="button button_type_negative">Ложь</button>
+    </div>
+  </section>
+
+  <div class="popup">
+    <div class="popup__content">
+      <h2 class="popup__head-text">Верно!</h2>
+      <p class="popup__answer-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit qui nam dolorum illum eveniet, neque ut iure fugiat esse vel.</p>
+      <button type="button" class="button button_type_next">Давай еще!</button>
+    </div>
+  </div>
+
+  <div class="results">
+    <p class="results__correct">Правильных ответов: <span class="results__correct-count">0</span></p>
+    <p class="result__incorrect">Неправильных: <span class="results__incorrect-count">0</span></p>
+  </div>
+</body>
+
+</html>
