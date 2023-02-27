@@ -1,39 +1,84 @@
 <!DOCTYPE html>
 <html lang="ru">
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <link rel="stylesheet" href="./styles/styles.css">
-  <script type="module" src="./scripts/index.js" defer></script>
+    <link rel="stylesheet" href="./styles/styles.css">
+    <script type="module" src="./scripts/index.js" defer></script>
 
-  <title>Правда или ложь?</title>
-</head>
+    <title>Правда или ложь?</title>
+  </head>
 
-<body class="root">
-  <section class="main">
-    <h1 class="main__head-text">Правда или ложь?</h1>
-    <p class="main__question-text"></p>
-    <div class="main__button-section">
-      <button type="button" class="button button_type_positive">Правда</button>
-      <button type="button" class="button button_type_negative">Ложь</button>
+  <body class="root">
+    <header class="header">
+      <div class="burger-menu">
+        <a href="#" class="burger-menu__toggle"
+          aria-label="Закрыть">
+          <span class="burger-menu__lines"></span>
+        </a>
+
+        <div class="profile">
+          <img src="./images/unknown.svg" alt="" class="profile__avatar">
+          <h2 class="profile__nickname">Unknown</h2>
+
+          <nav class="profile__navigation ">
+            <ul class="navigation__list">
+              <li class="navigation__item">
+                <a href="" class="navigation__link">Профиль</a>
+              </li>
+              <li class="navigation__item">
+                <a href="" class="navigation__link">Рейтинг</a>
+              </li>
+              <li class="navigation__item">
+                <a href="" class="navigation__link">Добавить вопрос</a>
+              </li>
+              <li class="navigation__item">
+                <a href="" class="navigation__link">Панель управления</a>
+              </li>
+              <li class="navigation__item">
+                <a href="" class="navigation__link"></a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <section class="section-profile">
+      <div class="profile">
+        <img src="./images/unknown.svg" alt="" class="profile__avatar">
+        <h2 class="profile__nickname">Unknown</h2>
+      </div>
+    </section>
+
+    <section class="main">
+      <h1 class="main__head-text">Правда или ложь?</h1>
+      <p class="main__question-text"></p>
+      <div class="main__button-section">
+        <button type="button" class="button button_type_positive">Правда</button>
+        <button type="button" class="button button_type_negative">Ложь</button>
+      </div>
+    </section>
+
+       <div class="popup">
+      <div class="popup__content">
+        <h2 class="popup__head-text">Верно!</h2>
+        <p class="popup__answer-text">Lorem ipsum dolor sit amet consectetur
+          adipisicing elit. Impedit qui nam dolorum illum eveniet, neque ut iure
+          fugiat esse vel.</p>
+        <button type="button" class="button button_type_next">Давай еще!</button>
+      </div>
     </div>
-  </section>
 
-  <div class="popup">
-    <div class="popup__content">
-      <h2 class="popup__head-text">Верно!</h2>
-      <p class="popup__answer-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit qui nam dolorum illum eveniet, neque ut iure fugiat esse vel.</p>
-      <button type="button" class="button button_type_next">Давай еще!</button>
+    <div class="results">
+      <p class="results__correct">Правильных ответов: <span
+          class="results__correct-count">0</span></p>
+      <p class="result__incorrect">Неправильных: <span
+          class="results__incorrect-count">0</span></p>
     </div>
-  </div>
-
-  <div class="results">
-    <p class="results__correct">Правильных ответов: <span class="results__correct-count">0</span></p>
-    <p class="result__incorrect">Неправильных: <span class="results__incorrect-count">0</span></p>
-  </div>
-</body>
+  </body>
 
 </html>

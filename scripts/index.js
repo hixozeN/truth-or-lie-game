@@ -1,4 +1,5 @@
 import { facts, varConfig } from "./conf.js";
+import BurgerMenu from "./Burger-menu.js"
 
 function openPopup() {
   varConfig.popupSelector.classList.add('popup_opened');
@@ -43,3 +44,10 @@ function checkAnswer(evt) {
 varConfig.buttonNextQuestion.addEventListener('click', closePopup);
 
 renderQuestion();
+
+const activeBergerMenu = () => {
+  const burgerMenu = new BurgerMenu();
+  return burgerMenu.activateBurgerMenu();
+}
+
+activeBergerMenu();

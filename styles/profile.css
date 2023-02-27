@@ -1,0 +1,52 @@
+.profile {
+  display: flex;
+  flex-direction: column;
+  z-index: 10;
+}
+
+.profile__avatar {
+  display: block;
+  width: 100px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  margin-top: 50px;
+  align-self: center;
+}
+
+.profile__nickname {
+  align-self: center;
+}
+
+.profile__navigation {
+  margin-left: 25px;
+}
+
+.navigation__item {
+  padding: 5px;
+}
+
+.navigation__link {
+  text-decoration: none;
+  color: white;
+  transition: color 0.5s ease-in-out;
+  -webkit-transition: color 0.5s ease-in-out;
+  -moz-transition: color 0.5s ease-in-out;
+  -ms-transition: color 0.5s ease-in-out;
+  -o-transition: color 0.5s ease-in-out;
+}
+
+.navigation__link:hover {
+color: #2E2E2E;
+}
+
+.section-profile {
+  position: absolute;
+  top:0;
+  right: 0;
+  margin: 75px 35px 0;
+}
+

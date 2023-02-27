@@ -1,6 +1,9 @@
 @import url(../vendor/normalize.css);
 @import url(../vendor/fonts.css);
 
+@import url(./burger-menu.css);
+@import url(./profile.css);
+
 :root {
   --index: calc(1vw + 1vh);
 }
