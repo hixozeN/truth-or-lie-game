@@ -14,7 +14,7 @@
 
   <body class="root">
     <header class="header">
-      <div class="burger-menu">
+      <div class="burger-menu burger-menu_active">
         <a href="#" class="burger-menu__toggle"
           aria-label="Закрыть">
           <span class="burger-menu__lines"></span>
@@ -44,6 +44,120 @@
             </ul>
           </nav>
         </div>
+
+        <div class="forms">
+          <nav class="forms__navigation">
+            <ul>
+              <li>
+                <a href="">Зарегистрироваться</a>
+              </li>
+              <li>
+                <a href="">Войти</a>
+              </li>
+            </ul>
+          </nav>
+          <div class="container-form">
+            <h2 class="container-form__heading">Регистрация</h2>
+            <form class="form form_type_registration"
+              method="post"
+              action="http://45.146.165.205:3000/auth/users"
+              enctype="application/json"
+              name="autorization"
+              novalidate>
+
+              <label class="form__label">
+                <input class="form__input
+                  form__input_type_login"
+                  type="text"
+                  name="login"
+                  placeholder="Придумайте логин"
+                  minlength="2"
+                  maxlength="40"
+                  required>
+                <span class="form__error login-error">
+                </span>
+              </label>
+
+              <label class="form__label">
+                <input class="form__input form__input_type_password"
+                  type="password"
+                  name="password"
+                  placeholder="Придумайте пароль"
+                  minlength="2"
+                  maxlength="200"
+                  required>
+                <span class="form__error password-error">
+                </span>
+              </label>
+
+              <label class="form__label">
+                <input class="form__input form__input_type_password"
+                  type="password"
+                  name="password"
+                  placeholder="Подтвердите пароль"
+                  minlength="2"
+                  maxlength="200"
+                  required>
+                <span class="form__error password-error">
+                </span>
+              </label>
+
+              <button class="form__button-save button"
+                type="submit">
+                Регистрация
+              </button>
+            </form>
+            <!-- <button class="popup__button-close button"
+              type="button"
+              aria-label="Закрыть">
+            </button> -->
+          </div>
+
+          <div class="container-form">
+            <h2 class="container-form__heading">Авторизация</h2>
+            <form class="form form_type_autorization"
+              method="post"
+              action="http://45.146.165.205:3000/auth/users"
+              enctype="application/json"
+              name="autorization"
+              novalidate>
+
+              <label class="form__label">
+                <input class="form__input
+                  form__input_type_login"
+                  type="text"
+                  name="login"
+                  placeholder="Введите ваш логин"
+                  minlength="2"
+                  maxlength="40"
+                  required>
+                <span class="popup__error name-error">
+                </span>
+              </label>
+
+              <label class="popup__label">
+                <input class="popup__input popup__input_type_job"
+                  type="password"
+                  name="password"
+                  placeholder="Введите Ваш пароль"
+                  minlength="2"
+                  maxlength="200"
+                  required>
+                <span class="popup__error job-error">
+                </span>
+              </label>
+
+              <button class="popup__button-save button"
+                type="submit">
+                Вход
+              </button>
+            </form>
+            <!-- <button class="popup__button-close button"
+              type="button"
+              aria-label="Закрыть">
+            </button> -->
+          </div>
+        </div>
       </div>
     </header>
 
@@ -63,7 +177,7 @@
       </div>
     </section>
 
-       <div class="popup">
+    <div class="popup">
       <div class="popup__content">
         <h2 class="popup__head-text">Верно!</h2>
         <p class="popup__answer-text">Lorem ipsum dolor sit amet consectetur
