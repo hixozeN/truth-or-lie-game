@@ -2,13 +2,9 @@ import { varConfig } from "./conf.js";
 import BurgerMenu from "./Burger-menu.js"
 import Fact from "./Fact.js";
 
-const getFact = new Fact(varConfig);
-const activeBergerMenu = () => {
-  const burgerMenu = new BurgerMenu();
-  return burgerMenu.activateBurgerMenu();
-}
-
-activeBergerMenu();
+const getFact = new Fact(varConfig); // Получаем экземпляр класса Fact. Метод: .enableFactGenerator();
+const burgerMenu = new BurgerMenu(); // Получаем экземпляр класса BurgerMenu. Метод: .activateBurgerMenu();
 
 
+burgerMenu.activateBurgerMenu();
 getFact.enableFactGenerator();
