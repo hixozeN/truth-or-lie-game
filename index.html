@@ -14,7 +14,7 @@
 
   <body class="root">
     <header class="header">
-      <div class="burger-menu burger-menu_active">
+      <div class="burger-menu">
         <a href="#" class="burger-menu__toggle"
           aria-label="Закрыть">
           <span class="burger-menu__lines"></span>
@@ -45,14 +45,47 @@
           </nav>
         </div>
 
-        <div class="forms">
-          <nav class="forms__navigation">
-            <ul>
-              <li>
-                <a href="">Зарегистрироваться</a>
+      </div>
+    </header>
+
+    <section class="section-profile">
+      <div class="profile">
+        <img src="./images/unknown.svg" alt="" class="profile__avatar">
+        <h2 class="profile__nickname">Unknown</h2>
+      </div>
+    </section>
+
+    <section class="main">
+      <h1 class="main__head-text">Правда или ложь?</h1>
+      <p class="main__question-text"></p>
+      <div class="main__button-section">
+        <button type="button" class="button button_type_positive">Правда</button>
+        <button type="button" class="button button_type_negative">Ложь</button>
+      </div>
+    </section>
+
+    <div class="popup">
+      <div class="popup__content">
+        <h2 class="popup__head-text">Верно!</h2>
+        <p class="popup__answer-text">Lorem ipsum dolor sit amet consectetur
+          adipisicing elit. Impedit qui nam dolorum illum eveniet, neque ut iure
+          fugiat esse vel.</p>
+        <button type="button" class="button button_type_next">Давай еще!</button>
+      </div>
+    </div>
+
+    <div class="popup popup_type_autorization">
+      <div class="popup__content popup__content_type_autorization">
+        <div class="popup__forms">
+          <nav class="popup__forms-navigation">
+            <ul class="navigation__list">
+              <li class="navigation__item">
+                <a class="navigation__link"
+                  href="#">Зарегистрироваться</a>
               </li>
-              <li>
-                <a href="">Войти</a>
+              <li class="navigation__item">
+                <a class="navigation__link"
+                  href="#">Войти</a>
               </li>
             </ul>
           </nav>
@@ -60,7 +93,7 @@
             <h2 class="container-form__heading">Регистрация</h2>
             <form class="form form_type_registration"
               method="post"
-              action="http://45.146.165.205:3000/auth/users"
+              action="http://45.146.165.205:3000/"
               enctype="application/json"
               name="autorization"
               novalidate>
@@ -107,13 +140,9 @@
                 Регистрация
               </button>
             </form>
-            <!-- <button class="popup__button-close button"
-              type="button"
-              aria-label="Закрыть">
-            </button> -->
           </div>
 
-          <div class="container-form">
+          <div class="container-form hidden">
             <h2 class="container-form__heading">Авторизация</h2>
             <form class="form form_type_autorization"
               method="post"
@@ -152,38 +181,12 @@
                 Вход
               </button>
             </form>
-            <!-- <button class="popup__button-close button"
-              type="button"
-              aria-label="Закрыть">
-            </button> -->
           </div>
+          <button class="popup__button-close button"
+            type="button"
+            aria-label="Закрыть">
+          </button>
         </div>
-      </div>
-    </header>
-
-    <section class="section-profile">
-      <div class="profile">
-        <img src="./images/unknown.svg" alt="" class="profile__avatar">
-        <h2 class="profile__nickname">Unknown</h2>
-      </div>
-    </section>
-
-    <section class="main">
-      <h1 class="main__head-text">Правда или ложь?</h1>
-      <p class="main__question-text"></p>
-      <div class="main__button-section">
-        <button type="button" class="button button_type_positive">Правда</button>
-        <button type="button" class="button button_type_negative">Ложь</button>
-      </div>
-    </section>
-
-    <div class="popup">
-      <div class="popup__content">
-        <h2 class="popup__head-text">Верно!</h2>
-        <p class="popup__answer-text">Lorem ipsum dolor sit amet consectetur
-          adipisicing elit. Impedit qui nam dolorum illum eveniet, neque ut iure
-          fugiat esse vel.</p>
-        <button type="button" class="button button_type_next">Давай еще!</button>
       </div>
     </div>
 

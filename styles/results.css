@@ -1,0 +1,14 @@
+.results {
+  text-align: left;
+  position: absolute;
+  bottom: 20px;
+  right: auto;
+  gap: 20px;
+}
+
+.results__correct {
+  font-size: calc(var(--index));
+}
+.result__incorrect {
+  font-size: calc(var(--index));
+}

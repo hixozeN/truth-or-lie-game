@@ -1,0 +1,31 @@
+:root {
+  --index: calc(1vw + 1vh);
+
+  /* Color */
+  --color-main: #0f1119;
+  
+  --color-second: #8A8887;
+  --color-second-20: rgba(138, 136, 135, 0.2);
+
+  --color-dark: #080808;
+  --color-dark-20: rgba(4, 4, 4, .2);
+
+  --color-light: #e0e0e0;
+
+  /* --color-white: #fff; */
+
+  --color-black: #000;
+  --color-black-15: rgba(0, 0, 0, .15);
+  --color-black-30: rgba(0, 0, 0, .3);
+  --color-black-50: rgba(0, 0, 0, .5);
+
+  --color-positive: #469746;
+  --color-positive-second: #37753c;
+  --color-negative: #d44242;
+  --color-negative-second: #532222;
+
+  --color-hover: #2E2E2E;
+
+  /* Size */
+  
+}
