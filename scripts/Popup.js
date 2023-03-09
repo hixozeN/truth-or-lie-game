@@ -1,43 +1,35 @@
 export class Popup {
-  constructor(
-    {
-      popupSelector,
-      popupContentSelector,
-      buttonPositive,
-      buttonNegative,
-      buttonNextQuestion,
-    },
-    check
-  ) {
-    this._popupSelector = popupSelector;
-    this._popupContentSelector = popupContentSelector;
-    this._buttonPositive = buttonPositive;
-    this._buttonNegative = buttonNegative;
-    this._buttonNextQuestion = buttonNextQuestion;
-    this._check = check;
+  constructor(popupSelector) {
+    this._popup = document.querySelector(popupSelector);
   }
   _openPopup() {
-    this._popupSelector.classList.add('popup_opened');
+    this._popup.classList.add('popup_opened');
   }
 
   _closePopup() {
-    this._popupSelector.classList.remove('popup_opened');
+    this._popup.classList.remove('popup_opened');
   }
 
   setEventListeners() {
-    this._buttonNextQuestion.addEventListener('click', () => {
-      this._closePopup();
-      this._popupContentSelector.setAttribute('class', 'popup__content');
+    this._popup.addEventListener('mousedown', (evt) => {
+      if (evt.target.classList.contains('popup_opened') || (evt.target.classList.contains('popup__button-close'))) {
+        this._closePopup();
+      }
     });
+    // Ниже перенести в наследника
+    //   this._buttonNextQuestion.addEventListener('click', () => {
+    //     this._closePopup();
+    //     this._popupContentSelector.setAttribute('class', 'popup__content');
+    //   });
 
-    this._buttonPositive.addEventListener('click', (evt) => {
-      this._openPopup();
-      this._check(evt);
-    });
+    //   this._buttonPositive.addEventListener('click', (evt) => {
+    //     this._openPopup();
+    //     this._check(evt);
+    //   });
 
-    this._buttonNegative.addEventListener('click', (evt) => {
-      this._openPopup();
-      this._check(evt);
-    });
+    //   this._buttonNegative.addEventListener('click', (evt) => {
+    //     this._openPopup();
+    //     this._check(evt);
+    //   });
   }
 }

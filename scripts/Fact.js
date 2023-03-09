@@ -1,20 +1,44 @@
-class Fact {
-  constructor(config) {
-    this._questionTextSelector = config.questionTextSelector;
-    this._buttonPositive = config.buttonPositive;
-    this._popupContentSelector = config.popupContentSelector;
-    this._popupHeadTextSelector = config.popupHeadTextSelector;
-    this._popupAnswerTextSelector = config.popupAnswerTextSelector;
-    this._typeSuccessClass = config.typeSuccessClass;
-    this._typeFailClass = config.typeFailClass;
-    this._countCorrectSelector = config.countCorrectSelector;
-    this._counterCorrect = config.counterCorrect;
-    this._countIncorrectSelector = config.countIncorrectSelector;
-    this._counterIncorrect = config.counterIncorrect;
-    this._successTrueFact = config.textResult.successTrueFact;
-    this._successFalseFact = config.textResult.successFalseFact;
-    this._failTrueFact = config.textResult.failTrueFact;
-    this._failFalseFact = config.textResult.failFalseFact;
+import { Popup } from "./Popup.js";
+
+class Fact extends Popup {
+  constructor(popupSelector,
+    {
+      questionTextSelector,
+      popupContentSelector,
+      buttonPositive,
+      buttonNegative,
+      buttonNextQuestion,
+      popupHeadTextSelector,
+      popupAnswerTextSelector,
+      typeSuccessClass,
+      typeFailClass,
+      countCorrectSelector,
+      counterCorrect,
+      countIncorrectSelector,
+      counterIncorrect,
+      textResultSuccessTrueFact,
+      textResultSuccessFalseFact,
+      textResultFailTrueFact,
+      textResultFailFalseFact
+    }) {
+    super(popupSelector);
+    this._questionTextSelector = questionTextSelector;
+    this._buttonPositive = buttonPositive;
+    this._buttonNegative = buttonNegative;
+    this._buttonNextQuestion = buttonNextQuestion;
+    this._popupContentSelector = popupContentSelector;
+    this._popupHeadTextSelector = popupHeadTextSelector;
+    this._popupAnswerTextSelector = popupAnswerTextSelector;
+    this._typeSuccessClass = typeSuccessClass;
+    this._typeFailClass = typeFailClass;
+    this._countCorrectSelector = countCorrectSelector;
+    this._counterCorrect = counterCorrect;
+    this._countIncorrectSelector = countIncorrectSelector;
+    this._counterIncorrect = counterIncorrect;
+    this._successTrueFact = textResultSuccessTrueFact;
+    this._successFalseFact = textResultSuccessFalseFact;
+    this._failTrueFact = textResultFailTrueFact;
+    this._failFalseFact = textResultFailFalseFact;
   }
 
   // Получаем рандомный факт, сгенерированный на бэке
@@ -40,10 +64,15 @@ class Fact {
     this._questionTextSelector.textContent = fact.question; // Записываем вопрос на главной странице
   }
 
+  _closePopup() {
+    super._closePopup();
+    this.fetchRandomFact();
+  }
+
   /*
     Метод проверки ответа
   */
-  checkAnswer = (evt) => {
+  _checkAnswer = (evt) => {
     if (this._isFactTrue) {
       // если факт правдивый
       evt.target === this._buttonPositive // и нажата кнопка "Правда"
@@ -74,6 +103,24 @@ class Fact {
     // И обновляем значение счетчиков на странице
     this._countCorrectSelector.textContent = this._counterCorrect;
     this._countIncorrectSelector.textContent = this._counterIncorrect;
+  }
+
+  setEventListeners() {
+    super.setEventListeners();
+    this._buttonNextQuestion.addEventListener('click', () => {
+      this._closePopup();
+      this._popupContentSelector.setAttribute('class', 'popup__content');
+    });
+
+    this._buttonPositive.addEventListener('click', (evt) => {
+      this._openPopup();
+      this._checkAnswer(evt);
+    });
+
+    this._buttonNegative.addEventListener('click', (evt) => {
+      this._openPopup();
+      this._checkAnswer(evt);
+    });
   }
 }
 

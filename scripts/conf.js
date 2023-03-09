@@ -11,12 +11,10 @@ export const varConfig = {
   buttonNextQuestion: document.querySelector('.button_type_next'),
   typeSuccessClass: `popup__content_type_success`,
   typeFailClass: `popup__content_type_fail`,
-  textResult: {
-    successTrueFact: 'Верно! Это правда.',
-    successFalseFact: 'Верно! Это ложь.',
-    failTrueFact: 'Увы и ах, это правда.',
-    failFalseFact: 'Увы, но это ложь.'
-  },
+  textResultSuccessTrueFact: 'Верно! Это правда.',
+  textResultSuccessFalseFact: 'Верно! Это ложь.',
+  textResultFailTrueFact: 'Увы и ах, это правда.',
+  textResultFailFalseFact: 'Увы, но это ложь.',
   counterCorrect: 0,
   counterIncorrect: 0,
 };
