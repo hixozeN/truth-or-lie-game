@@ -5,7 +5,7 @@ import { Popup } from './Popup.js';
 
 const getFact = new Fact(varConfig); // Получаем экземпляр класса Fact. Метод: .fetchRandomFact();
 const burgerMenu = new BurgerMenu(); // Получаем экземпляр класса BurgerMenu. Метод: .activateBurgerMenu();
-const popup = new Popup(varConfig, getFact.checkAnswer); // Получаем экземпляр класса. Вторым аргументом передаем результат проверки ответа
+const popup = new Popup(varConfig, getFact.checkAnswer, getFact.returnAnswer); // Получаем экземпляр класса. Вторым аргументом передаем результат проверки ответа
 
 burgerMenu.activateBurgerMenu();
 getFact.fetchRandomFact();
