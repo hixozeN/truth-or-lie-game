@@ -6,6 +6,7 @@ import { PopupWithFact } from './PopupWithFact.js';
 const getFact = new Fact(varConfig); // Получаем экземпляр класса Fact. Метод: .fetchRandomFact();
 const burgerMenu = new BurgerMenu(); // Получаем экземпляр класса BurgerMenu. Метод: .activateBurgerMenu();
 const popupWithFact = new PopupWithFact(
+  '.popup_type_fact',
   varConfig,
   getFact.checkAnswer,
   getFact.returnAnswer

@@ -1,5 +1,5 @@
 export const varConfig = {
-  popupSelector: document.querySelector('.popup'),
+  popupSelector: '.popup_type_fact',
   popupContentSelector: document.querySelector('.popup__content'),
   popupHeadTextSelector: document.querySelector('.popup__head-text'),
   popupAnswerTextSelector: document.querySelector('.popup__answer-text'),
