@@ -15,6 +15,7 @@ export class PopupWithResult extends Popup {
   timer() {
     setTimeout(() => {
       this._openPopup();
+      this.setEventListeners();
       this._countCorrectSelector.textContent = this._correctResult();
       this._countIncorrectSelector.textContent = this._incorrectResult();
     }, 10000);
