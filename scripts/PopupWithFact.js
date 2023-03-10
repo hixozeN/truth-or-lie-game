@@ -77,8 +77,7 @@ export class PopupWithFact extends Popup {
     super.setEventListeners();
     this._buttonNextQuestion.addEventListener('click', () => {
       this._closePopup();
-      // console.log(this._nextQuestion);
-      // this._nextQuestion();
+      this._nextQuestion();
       this._popupContentSelector.setAttribute('class', 'popup__content');
     });
 

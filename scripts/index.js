@@ -16,8 +16,3 @@ const popupWithFact = new PopupWithFact(
 burgerMenu.activateBurgerMenu();
 getFact.fetchRandomFact();
 popupWithFact.setEventListeners();
-
-//отправляем новый запрос на сервер при клике на кнопку закрывания попапа
-varConfig.buttonNextQuestion.addEventListener('click', () => {
-  getFact.fetchRandomFact();
-});
