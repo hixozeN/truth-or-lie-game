@@ -1,13 +1,13 @@
 export class Popup {
-  constructor(popup) {
-    this._popup = popup;
+  constructor(popupSelector) {
+    this._popupSelector = document.querySelector(popupSelector);
   }
 
   _openPopup() {
-    this._popup.classList.add('popup_opened');
+    this._popupSelector.classList.add('popup_opened');
   }
 
   _closePopup() {
-    this._popup.classList.remove('popup_opened');
+    this._popupSelector.classList.remove('popup_opened');
   }
 }

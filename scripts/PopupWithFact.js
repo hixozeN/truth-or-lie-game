@@ -1,8 +1,8 @@
 import { Popup } from './Popup.js';
-export default class PopupWithFact extends Popup {
+export class PopupWithFact extends Popup {
   constructor(
+    popupSelector,
     {
-      popupSelector,
       buttonPositive,
       buttonNegative,
       buttonNextQuestion,
@@ -20,7 +20,7 @@ export default class PopupWithFact extends Popup {
     check,
     answer
   ) {
-    super(popup);
+    super(popupSelector);
     this._buttonPositive = buttonPositive;
     this._buttonNegative = buttonNegative;
     this._buttonNextQuestion = buttonNextQuestion;
