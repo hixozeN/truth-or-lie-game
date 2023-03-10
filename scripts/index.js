@@ -9,19 +9,18 @@ const burgerMenu = new BurgerMenu(); // Получаем экземпляр кл
 const popupWithFact = new PopupWithFact(
   '.popup_type_fact',
   varConfig,
-  getFact.checkAnswer,
-  getFact.returnAnswer,
+  getFact.getCheckedFact,
+  getFact.getTextAnswer,
   getFact.fetchRandomFact
-); // Получаем экземпляр класса. Вторым аргументом передаем результат проверки ответа
+);
 const popupWithResult = new PopupWithResult(
   '.popup_type_result',
-  popupWithFact.showCorrectResult,
-  popupWithFact.showIncorrectResult,
+  popupWithFact.getCorrectCounter,
+  popupWithFact.getIncorrectCounter,
   varConfig
 );
 
 burgerMenu.activateBurgerMenu();
 getFact.fetchRandomFact();
 popupWithFact.setEventListeners();
-
 popupWithResult.timer();

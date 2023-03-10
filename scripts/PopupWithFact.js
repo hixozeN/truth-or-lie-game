@@ -12,8 +12,6 @@ export class PopupWithFact extends Popup {
       typeSuccessClass,
       typeFailClass,
       popupContentSelector,
-      counterCorrect,
-      counterIncorrect,
     },
     check,
     answer,
@@ -28,42 +26,34 @@ export class PopupWithFact extends Popup {
     this._typeSuccessClass = typeSuccessClass;
     this._typeFailClass = typeFailClass;
     this._popupContentSelector = popupContentSelector;
-    this._counterCorrect = counterCorrect;
-    this._counterIncorrect = counterIncorrect;
-    this._successTrueFact = textResult.successTrueFact;
-    this._successFalseFact = textResult.successFalseFact;
-    this._failTrueFact = textResult.failTrueFact;
-    this._failFalseFact = textResult.failFalseFact;
+    this._counterCorrect = 0;
+    this._counterIncorrect = 0;
+    this._trueFact = textResult.trueFact;
+    this._falseFact = textResult.falseFact;
     this._check = check;
     this._answer = answer;
     this._nextQuestion = question;
-    (this.showCorrectResult = this.showCorrectResult.bind(this)),
-      (this.showIncorrectResult = this.showIncorrectResult.bind(this));
+    (this.getCorrectCounter = this.getCorrectCounter.bind(this)),
+      (this.getIncorrectCounter = this.getIncorrectCounter.bind(this));
   }
-  checkTrue = (evt) => {
-    if (this._check()) {
-      if (evt.target === this._buttonPositive) {
-        this._showAnswer(this._typeSuccessClass, this._successTrueFact);
-        this._counterCorrect += 1;
-      } else {
-        this._showAnswer(this._typeFailClass, this._failTrueFact);
-        this._counterIncorrect += 1;
-      }
+  _checkAnswer = (evt) => {
+    //если факт правдивый и нажали кнопку правда или факт ложный и нажали кнопку ложь то это правильный ответ
+    if (
+      (this._check() && evt.target === this._buttonPositive) ||
+      (!this._check() && evt.target === this._buttonNegative)
+    ) {
+      this._showAnswer(this._typeSuccessClass, this._trueFact);
+      this._counterCorrect += 1;
     } else {
-      if (evt.target === this._buttonPositive) {
-        this._showAnswer(this._typeFailClass, this._failFalseFact);
-        this._counterCorrect += 1;
-      } else {
-        this._showAnswer(this._typeSuccessClass, this._successFalseFact);
-        this._counterIncorrect += 1;
-      }
+      this._showAnswer(this._typeFailClass, this._falseFact);
+      this._counterIncorrect += 1;
     }
   };
 
-  showCorrectResult() {
+  getCorrectCounter() {
     return this._counterCorrect;
   }
-  showIncorrectResult() {
+  getIncorrectCounter() {
     return this._counterIncorrect;
   }
 
@@ -87,12 +77,12 @@ export class PopupWithFact extends Popup {
 
     this._buttonPositive.addEventListener('click', (evt) => {
       this._openPopup();
-      this.checkTrue(evt);
+      this._checkAnswer(evt);
     });
 
     this._buttonNegative.addEventListener('click', (evt) => {
       this._openPopup();
-      this.checkTrue(evt);
+      this._checkAnswer(evt);
     });
   }
 }
