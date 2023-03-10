@@ -32,7 +32,7 @@ class Fact {
   checkAnswer = () => {
     return this._isFactTrue;
   };
-  
+
   returnAnswer = () => {
     return this._answer;
   };

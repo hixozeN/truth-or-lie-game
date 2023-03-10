@@ -18,7 +18,8 @@ export class PopupWithFact extends Popup {
       counterIncorrect,
     },
     check,
-    answer
+    answer,
+    question
   ) {
     super(popupSelector);
     this._buttonPositive = buttonPositive;
@@ -39,6 +40,7 @@ export class PopupWithFact extends Popup {
     this._failFalseFact = textResult.failFalseFact;
     this._check = check;
     this._answer = answer;
+    this._nextQuestion = question;
   }
   checkTrue = (evt) => {
     if (this._check()) {
@@ -72,8 +74,11 @@ export class PopupWithFact extends Popup {
     this._countIncorrectSelector.textContent = this._counterIncorrect;
   }
   setEventListeners() {
+    super.setEventListeners();
     this._buttonNextQuestion.addEventListener('click', () => {
       this._closePopup();
+      // console.log(this._nextQuestion);
+      // this._nextQuestion();
       this._popupContentSelector.setAttribute('class', 'popup__content');
     });
 

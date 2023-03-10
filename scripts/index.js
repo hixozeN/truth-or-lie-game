@@ -9,7 +9,8 @@ const popupWithFact = new PopupWithFact(
   '.popup_type_fact',
   varConfig,
   getFact.checkAnswer,
-  getFact.returnAnswer
+  getFact.returnAnswer,
+  getFact.fetchRandomFact
 ); // Получаем экземпляр класса. Вторым аргументом передаем результат проверки ответа
 
 burgerMenu.activateBurgerMenu();
