@@ -20,7 +20,7 @@ export default class PopupWithFact extends Popup {
     check,
     answer
   ) {
-    super(popupSelector);
+    super(popup);
     this._buttonPositive = buttonPositive;
     this._buttonNegative = buttonNegative;
     this._buttonNextQuestion = buttonNextQuestion;
