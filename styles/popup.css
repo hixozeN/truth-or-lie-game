@@ -99,7 +99,6 @@
 }
 
 .popup__container-form {
-  width: calc(var(--index)*18);
   display: flex;
   justify-content: center;
 }
