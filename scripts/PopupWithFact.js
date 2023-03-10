@@ -73,6 +73,12 @@ export class PopupWithFact extends Popup {
     this._countCorrectSelector.textContent = this._counterCorrect;
     this._countIncorrectSelector.textContent = this._counterIncorrect;
   }
+
+  _closePopup() {
+    super._closePopup();
+    this._nextQuestion();
+  }
+
   setEventListeners() {
     super.setEventListeners();
     this._buttonNextQuestion.addEventListener('click', () => {
