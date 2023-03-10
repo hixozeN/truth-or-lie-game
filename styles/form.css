@@ -13,7 +13,7 @@
   border-bottom: 1px solid var(--color-black-50);
   width: 100%;
   opacity: 1;
-  background-color: var(--color-second);
+  background-color: var(--color-alternative);
 }
 
 .form__input::placeholder {
@@ -32,22 +32,37 @@
 
 .form__button-save {
   align-self: center;
-  background-color: var(--color-black-50);
+  background-color: var(--color-main);
   color: var(--color-light);
   font-size: calc(var(--index));
 }
 
-.form__input-checkbox:checked + label::after {
+.forme__label_type_checkbox {
+  padding: 10px 0 10px 40px;
+}
+
+.form__input_type_checkbox + label::after {
   content: "";
   position: absolute;
-  top: -3px;
+  top: 3px;
   left: 0;
-  width: 25px;
-  height: 23px;
+  width: 30px;
+  height: 30px;
   background-image: url("../images/icons/checkmark.svg");
   background-repeat: no-repeat;
   background-position: 0 0;
-  opacity: 0.4;
+}
+
+.form__input_type_checkbox:checked + label::after {
+  content: "";
+  position: absolute;
+  top: 3px;
+  left: 0;
+  width: 30px;
+  height: 30px;
+  background-image: url("../images/icons/checkmark-filled.svg");
+  background-repeat: no-repeat;
+  background-position: 0 0;
 }
 
 .form__list {

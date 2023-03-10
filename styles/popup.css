@@ -75,13 +75,11 @@
 }
 
 .popup_type_autorization {
-  background-color: var(--color-second-20);
+  background-color: var(--color-black-50);
 }
 
 .popup__content_type_autorization {
-  background-color: var(--color-second);
-  /* padding: 25px calc(var(--index)*3); */
-  /* justify-content: center; */
+  background-color: var(--color-alternative);
 }
 
 .popup__button-close {
@@ -97,7 +95,7 @@
   -ms-transform: translate(115%, -115%);
   -o-transform: translate(115%, -115%);
 
-  background: url('../images/icon-close.svg') center / cover no-repeat;
+  background: url('../images/icons/icon-close.svg') center / cover no-repeat;
 }
 
 .popup__container-form {
