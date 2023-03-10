@@ -1,5 +1,5 @@
 import { Popup } from './Popup.js';
-export class PopupWidthFact extends Popup {
+export default class PopupWithFact extends Popup {
   constructor(
     {
       popupSelector,
