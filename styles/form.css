@@ -1,10 +1,21 @@
 .form {
   display: flex;
-  width: calc(var(--index)*15);
+  width: calc(var(--index)*20);
   max-width: 450px;
   padding-top: 25px;
   flex-direction: column;
-  gap: calc(var(--index)*1.2);
+  min-height: 300px;
+  justify-content: space-between;
+}
+
+.form__list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.form__item {
+min-height: 21px;
 }
 
 .form__input {
@@ -24,6 +35,7 @@
   display: block;
   position: relative;
   color: var(--color-dark);
+  min-height: 41px;
 }
 
 .form__label:last-of-type {
@@ -35,6 +47,7 @@
   background-color: var(--color-main);
   color: var(--color-light);
   font-size: calc(var(--index));
+  height: 75px;
 }
 
 .forme__label_type_checkbox {
@@ -63,10 +76,4 @@
   background-image: url("../images/icons/checkmark-filled.svg");
   background-repeat: no-repeat;
   background-position: 0 0;
-}
-
-.form__list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
 }

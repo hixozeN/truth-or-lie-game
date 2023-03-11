@@ -80,6 +80,7 @@
 
 .popup__content_type_autorization {
   background-color: var(--color-alternative);
+  min-height: 520px;
 }
 
 .popup__button-close {
@@ -99,27 +100,32 @@
 }
 
 .popup__container-form {
-  display: flex;
+  display: none;
   justify-content: center;
 }
 
-/* .popup__forms {
-  
-} */
+.popup__container-form_active {
+  display: flex;
+}
 
-.popup__forms-list {
+.popup__tabs-list {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
 }
 
-.popup__forms-item {
+.popup__tabs-item {
   padding: 0;
 }
 
-.popup__forms-link {
+.popup__tabs-link {
   display: block;
   width: 100%;
   color: var(--color-dark-20);
   text-align: center;
   padding: 20px 0 20px;
+}
+
+.popup__forms-list {
+  padding: 0;
+  list-style: none;
 }

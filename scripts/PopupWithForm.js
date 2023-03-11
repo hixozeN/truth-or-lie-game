@@ -1,17 +1,12 @@
 import { Popup } from './Popup.js';
 
 export default class PopupWithForm extends Popup {
-  constructor(popupSelector, config, formList) {
+  constructor(popupSelector, config) {
     super(popupSelector);
     this._popup = document.querySelector(popupSelector);
     this._buttonClose = this._popup.querySelector(config.buttonCloseSelector);
-    // this._form = this._popup.querySelector('form');
-    this._formList = formList;
-    this._tabList = this._popup.querySelectorAll('.popup__forms-link')
 
-    // console.log(this._tabList);
   }
-
   open() {
     super._openPopup();
   }
@@ -21,21 +16,20 @@ export default class PopupWithForm extends Popup {
     // this._formList.forEach(form => form.reset());
   }
 
+  _switchForm(evt) {
+    evt.target
+  }
 
-  _tabForm() {
+  _sdf() {
     this._formList.forEach((form) => {
       const inputName = input.getAttribute('name')
       form.value = data[`${inputName}`];
     });
+    return
   }
 
   setEventListeners() {
     super.setEventListeners();
     this._buttonClose.addEventListener('click', () => this._closePopup());
-    this._tabList.forEach((tab) => {
-      tab.addEventListener('click', () => {
-        console.log(tab);
-      });
-    });
   }
 }
