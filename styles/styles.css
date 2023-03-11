@@ -24,10 +24,6 @@
   font-family: 'Inter', sans-serif;
 }
 
-.hidden {
-  display: none;
-}
-
 .visually-hidden {
   position: absolute;
   width: 1px;

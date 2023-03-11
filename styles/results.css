@@ -9,6 +9,12 @@
 .results__correct {
   font-size: calc(var(--index));
 }
-.result__incorrect {
+.results__incorrect {
   font-size: calc(var(--index));
+}
+
+.results__button {
+  background-color: #fff;
+  min-width: 130px;
+  position: static;
 }

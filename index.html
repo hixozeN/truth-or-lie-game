@@ -1,13 +1,21 @@
 <!DOCTYPE html>
 <html lang="ru">
-
   <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta
+      http-equiv="X-UA-Compatible"
+      content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0" />
 
-    <link rel="stylesheet" href="./styles/styles.css">
-    <script type="module" src="./scripts/index.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="./styles/styles.css" />
+    <script
+      type="module"
+      src="./scripts/index.js"
+      defer></script>
 
     <title>Правда или ложь?</title>
   </head>
@@ -15,42 +23,59 @@
   <body class="root">
     <header class="header">
       <div class="burger-menu">
-        <a href="#" class="burger-menu__toggle"
+        <a
+          href="#"
+          class="burger-menu__toggle"
           aria-label="Закрыть">
           <span class="burger-menu__lines"></span>
         </a>
 
         <div class="profile">
-          <img src="./images/unknown.svg" alt="" class="profile__avatar">
+          <img
+            src="./images/unknown.svg"
+            alt=""
+            class="profile__avatar" />
           <h2 class="profile__nickname">Unknown</h2>
           <nav class="profile__navigation navigation">
             <ul class="navigation__list">
               <li class="navigation__item">
-                <a href="" class="navigation__link">Профиль</a>
+                <a
+                  href=""
+                  class="navigation__link">Профиль</a>
               </li>
               <li class="navigation__item">
-                <a href="" class="navigation__link">Рейтинг</a>
+                <a
+                  href=""
+                  class="navigation__link">Рейтинг</a>
               </li>
               <li class="navigation__item">
-                <a href="" class="navigation__link">Добавить вопрос</a>
+                <a
+                  href=""
+                  class="navigation__link">Добавить вопрос</a>
               </li>
               <li class="navigation__item">
-                <a href="" class="navigation__link">Панель управления</a>
+                <a
+                  href=""
+                  class="navigation__link">Панель управления</a>
               </li>
               <li class="navigation__item">
-                <a href="" class="navigation__link"></a>
+                <a
+                  href=""
+                  class="navigation__link"></a>
               </li>
             </ul>
           </nav>
         </div>
-
       </div>
     </header>
 
     <section class="section-profile">
       <div class="profile">
         <a href="#" class="profile__link">
-          <img src="./images/unknown.svg" alt="" class="profile__avatar">
+          <img
+            src="./images/unknown.svg"
+            alt=""
+            class="profile__avatar" />
         </a>
         <h2 class="profile__nickname">Unknown</h2>
       </div>
@@ -60,18 +85,31 @@
       <h1 class="main__head-text">Правда или ложь?</h1>
       <p class="main__question-text"></p>
       <div class="main__button-section">
-        <button type="button" class="button button_type_positive">Правда</button>
-        <button type="button" class="button button_type_negative">Ложь</button>
+        <button
+          type="button"
+          class="button button_type_positive">
+          Правда
+        </button>
+        <button
+          type="button"
+          class="button button_type_negative">
+          Ложь
+        </button>
       </div>
     </section>
 
     <div class="popup popup_type_fact">
       <div class="popup__content">
         <h2 class="popup__head-text">Верно!</h2>
-        <p class="popup__answer-text">Lorem ipsum dolor sit amet consectetur
-          adipisicing elit. Impedit qui nam dolorum illum eveniet, neque ut iure
-          fugiat esse vel.</p>
-        <button type="button" class="button button_type_next">Давай еще!</button>
+        <p class="popup__answer-text">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit qui
+          nam dolorum illum eveniet, neque ut iure fugiat esse vel.
+        </p>
+        <button
+          type="button"
+          class="button button_type_next">
+          Давай еще!
+        </button>
       </div>
     </div>
 
@@ -81,9 +119,9 @@
           <nav class="popup__forms-navigation navigation">
             <ul class="navigation__list popup__forms-list">
               <li class="navigation__item popup__forms-item">
-                <a class="navigation__link popup__forms-link
-                  "
-                  href="#">
+                <a class="navigation__link popup__forms-link"
+                  href="#"
+                  id="registration">
                   Зарегистрироваться
                 </a>
               </li>
@@ -91,7 +129,8 @@
               <li class="navigation__item popup__forms-item">
                 <a class="navigation__link popup__forms-link
                   navigation__link_current"
-                  href="#">
+                  href="#"
+                  id="autorization">
                   Авторизоваться
                 </a>
               </li>
@@ -99,41 +138,40 @@
           </nav>
           <div class="popup__container-form">
             <!-- <h2 class="popup__container-form__heading">Регистрация</h2> -->
-            <form class="form form_type_registration hidden"
+            <form
+              class="form form_type_registration visually-hidden"
               method="post"
               action="http://45.146.165.205:3000/"
               enctype="application/json"
-              name="autorization"
+              name="registration"
               novalidate>
-
               <label class="form__label">
-                <input class="form__input
-                  form__input_type_login"
+                <input
+                  class="form__input form__input_type_login"
                   type="text"
                   name="login"
                   placeholder="Придумайте логин"
                   minlength="2"
                   maxlength="40"
                   required>
-                <span class="form__error login-error">
-                </span>
+                <span class="form__error login-error"> </span>
               </label>
 
               <label class="form__label">
-                <input class="form__input
-                  form__input_type_password"
+                <input
+                  class="form__input form__input_type_password"
                   type="password"
                   name="password"
                   placeholder="Придумайте пароль"
                   minlength="2"
                   maxlength="200"
                   required>
-                <span class="form__error password-error">
-                </span>
+                <span class="form__error password-error"> </span>
               </label>
 
               <label class="form__label">
-                <input class="form__input
+                <input
+                  class="form__input
                   form__input_type_password"
                   type="password"
                   name="password"
@@ -145,7 +183,8 @@
                 </span>
               </label>
 
-              <button class="form__button-save button"
+              <button
+                class="form__button-save button"
                 type="submit">
                 Регистрация
               </button>
@@ -154,7 +193,8 @@
 
           <div class="popup__container-form">
             <!-- <h2 class="popup__container-form__heading">Авторизация</h2> -->
-            <form class="form form_type_autorization"
+            <form
+              class="form form_type_autorization"
               method="post"
               action="http://45.146.165.205:3000/auth/users"
               enctype="application/json"
@@ -175,6 +215,7 @@
                     </span>
                   </label>
                 </li>
+
                 <li class="form__item">
                   <label class="form__label">
                     <input class="form__input form__input_type_job"
@@ -188,6 +229,7 @@
                     </span>
                   </label>
                 </li>
+
                 <li class="form__item">
                   <input class="form__input form__input_type_checkbox
                     popup__input_type_job visually-hidden "
@@ -201,31 +243,50 @@
                 </li>
               </ul>
 
-              <button class="form__button-save button"
+              <button
+                class="form__button-save button"
                 type="submit">
                 Вход
               </button>
             </form>
           </div>
-          <button class="popup__button-close button"
+          <button
+            class="popup__button-close button"
             type="button"
-            aria-label="Закрыть">
-            <!-- <svg xmlns="http://www.w3.org/2000/svg" class="ionicon" viewBox="0 0 512 512">
-              <title>Close</title>
-              <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                stroke-width="32" d="M368 368L144 144M368 144L144 368" />
-            </svg> -->
-          </button>
+            aria-label="Закрыть"></button>
         </div>
       </div>
     </div>
 
-    <div class="results">
-      <p class="results__correct">Правильных ответов: <span
-          class="results__correct-count">0</span></p>
-      <p class="result__incorrect">Неправильных: <span
-          class="results__incorrect-count">0</span></p>
+    <!-- надо будет исправить -->
+    <div class="popup popup_type_start popup_opened">
+      <div class="popup__content">
+        <h2 class="start__title">Вы готовы?</h2>
+        <button
+          class="button start__button"
+          type="button"
+          aria-label="Закрыть">
+          Старт
+        </button>
+      </div>
+    </div>
+    <div class="popup popup_type_result">
+      
+      <div class="popup__content">
+        <div class="results">
+          <p class="results__correct">
+            Правильных ответов: <span class="results__correct-count">0</span>
+          </p>
+          <p class="results__incorrect">
+            Неправильных: <span class="results__incorrect-count">0</span>
+          </p>
+          <button
+            class="popup__button-close button results__button"
+            type="button"
+            aria-label="Закрыть">
+          </button>
+        </div>
+      </div>
     </div>
   </body>
-
 </html>
