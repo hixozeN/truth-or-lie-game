@@ -51,7 +51,7 @@
   margin: 0;
   padding: 25px 0;
   text-align: center;
-  font-size: calc(var(--index));
+  font-size: calc(var(--index))
 }
 
 @media screen and (max-width: 670px) {
@@ -65,7 +65,7 @@
   }
 
   .popup__answer-text {
-    font-size: calc(var(--index) * 1.2);
+    font-size: calc(var(--index) * 1.2)
   }
 }
 
@@ -86,23 +86,4 @@
   right: -40px;
 
   border: none;
-}
-
-/* надо будет исправить */
-.popup_type_start {
-  opacity: 0.95;
-  background: #000;
-}
-.start__button {
-  background-color: #fff;
-}
-
-.popup_type_result {
-  opacity: 0.95;
-  background: #000;
-}
-.result__button {
-  background-color: #fff;
-  min-width: 130px;
-  position: static;
 }
