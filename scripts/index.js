@@ -2,8 +2,6 @@ import { varConfig, popupFormConfig } from './conf.js';
 import BurgerMenu from './Burger-menu.js';
 import Fact from './Fact.js';
 import { PopupWithFact } from './PopupWithFact.js';
-import { PopupWithResult } from './PopupWithResult.js';
-import { PopupStart } from './PopupStart.js';
 import PopupWithForm from './PopupWithForm.js';
 import Form from './Form.js';
 
@@ -14,21 +12,10 @@ const burgerMenu = new BurgerMenu(); // Получаем экземпляр кл
 const popupWithFact = new PopupWithFact(
   '.popup_type_fact',
   varConfig,
-  getFact.getCheckedFact,
-  getFact.getTextAnswer,
+  getFact.checkAnswer,
+  getFact.returnAnswer,
   getFact.fetchRandomFact
-);
-const popupWithResult = new PopupWithResult(
-  '.popup_type_result',
-  popupWithFact.getCorrectCounter,
-  popupWithFact.getIncorrectCounter,
-  varConfig
-);
-const popupStart = new PopupStart(
-  '.popup_type_start',
-  varConfig,
-  popupWithResult.timer
-);
+); // Получаем экземпляр класса. Вторым аргументом передаем результат проверки ответа
 
 const formAutorization = new Form(
   'autorization',
@@ -58,7 +45,3 @@ burgerMenu.activateBurgerMenu();
 getFact.fetchRandomFact();
 popupWithFact.setEventListeners();
 popupStart.start();
-
-profileLinkAvatar.addEventListener('click', () => {
-  popupAutorization.open();
-});
