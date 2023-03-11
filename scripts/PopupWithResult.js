@@ -11,6 +11,7 @@ export class PopupWithResult extends Popup {
     this._incorrectResult = incorrectResult;
     this._countCorrectSelector = countCorrectSelector;
     this._countIncorrectSelector = countIncorrectSelector;
+    this.timer = this.timer.bind(this);
   }
   timer() {
     setTimeout(() => {
@@ -18,6 +19,6 @@ export class PopupWithResult extends Popup {
       this.setEventListeners();
       this._countCorrectSelector.textContent = this._correctResult();
       this._countIncorrectSelector.textContent = this._incorrectResult();
-    }, 10000);
+    }, 30000);
   }
 }

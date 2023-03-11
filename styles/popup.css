@@ -89,6 +89,14 @@
 }
 
 /* надо будет исправить */
+.popup_type_start {
+  opacity: 0.95;
+  background: #000;
+}
+.start__button {
+  background-color: #fff;
+}
+
 .popup_type_result {
   opacity: 0.95;
   background: #000;

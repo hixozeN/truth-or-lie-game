@@ -6,6 +6,7 @@ export const varConfig = {
   questionTextSelector: document.querySelector('.main__question-text'),
   countCorrectSelector: document.querySelector('.results__correct-count'),
   countIncorrectSelector: document.querySelector('.results__incorrect-count'),
+  buttonStart: document.querySelector('.popup_type_start'),
   buttonPositive: document.querySelector('.button_type_positive'),
   buttonNegative: document.querySelector('.button_type_negative'),
   buttonNextQuestion: document.querySelector('.button_type_next'),
