@@ -18,7 +18,7 @@ export default class Form {
           ...result,
           [inputElement.name]: inputElement.value,
         }
-      }       
+      }
     }, {});
   }
 

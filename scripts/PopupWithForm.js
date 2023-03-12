@@ -3,9 +3,6 @@ import { Popup } from './Popup.js';
 export default class PopupWithForm extends Popup {
   constructor(popupSelector, config) {
     super(popupSelector);
-    this._popup = document.querySelector(popupSelector);
-    this._buttonClose = this._popup.querySelector(config.buttonCloseSelector);
-
   }
   open() {
     super._openPopup();
@@ -26,10 +23,5 @@ export default class PopupWithForm extends Popup {
       form.value = data[`${inputName}`];
     });
     return
-  }
-
-  setEventListeners() {
-    super.setEventListeners();
-    this._buttonClose.addEventListener('click', () => this._closePopup());
   }
 }
