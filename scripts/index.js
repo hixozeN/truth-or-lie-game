@@ -4,58 +4,8 @@ import Fact from './Fact.js';
 import { PopupWithFact } from './PopupWithFact.js';
 import PopupWithForm from './PopupWithForm.js';
 import Form from './Form.js';
+import FormAuth from './FormAuth.js';
 import TabList from './TabList.js';
-
-// тест входа
-const profileAuth = document.querySelector('.profile_user');
-const profileGuest = document.querySelector('.profile_guest');
-const profileName = document.querySelectorAll('.profile__nickname');
-
-const formAuth = document.forms['autorization'];
-const inputAuthLogin = formAuth.querySelector('.form__input_type_login');
-const inputAuthPassword = formAuth.querySelector('.form__input_type_password');
-
-const formReg = document.forms['registration'];
-const inputRegLogin = formReg.querySelector('.form__input_type_login');
-const inputRegPassword = formReg.querySelector('.form__input_type_password');
-
-
-const btnLogout = document.querySelector('.button_type_logout');
-
-const state = {
-  formData: {
-    "username": "",
-    "password": ""
-  },
-  resData: {}
-};
-
-const authRender = () => {
-  profileAuth.classList.add('profile_active');
-  profileGuest.classList.remove('profile_active');
-  profileName.forEach(nickname => nickname.textContent = localStorage.username)
-
-};
-
-const guestRender = () => {
-  profileGuest.classList.add('profile_active');
-  profileAuth.classList.remove('profile_active');
-  profileName.forEach(nickname => nickname.textContent = 'Гость')
-};
-
-const renderPage = (token) => {
-  token ? authRender() : guestRender()
-};
-
-inputAuthLogin.addEventListener('change', (evt) => { state.formData["username"] = evt.target.value; console.log(state.formData) });
-inputAuthPassword.addEventListener('change', (evt) => { state.formData["password"] = evt.target.value; console.log(state.formData) });
-inputRegLogin.addEventListener('change', (evt) => { state.formData["username"] = evt.target.value; console.log(state.formData) });
-inputRegPassword.addEventListener('change', (evt) => { state.formData["password"] = evt.target.value; console.log(state.formData) });
-btnLogout.addEventListener('click', () => {
-  delete localStorage.username;
-  delete localStorage.token;
-  renderPage(localStorage.token);
-})
 
 const profileLinkAvatar = document.querySelector('.profile__link');
 
@@ -69,7 +19,7 @@ const popupWithFact = new PopupWithFact(
   getFact.fetchRandomFact
 ); // Получаем экземпляр класса. Вторым аргументом передаем результат проверки ответа
 
-const formAutorization = new Form(
+const formAutorization = new FormAuth(
   'autorization',
   async () => {
     popupAutorization.close();
@@ -78,18 +28,14 @@ const formAutorization = new Form(
         "Content-type": "application/json"
       },
       method: "POST",
-      body: JSON.stringify(state.formData)
+      body: JSON.stringify(formAutorization.getInputValues())
     })
       .then(res => res.json())
-      .then(data => state.resData = data)
+      .then(data => formAutorization.storeResponse(data))
 
-    localStorage.setItem('token', state.resData.token);
-    localStorage.setItem('username', state.resData.user.username);
+    formAutorization.setLocalStorage();
 
-    renderPage(localStorage.token);
-
-    console.log(state.resData)
-    console.log(formAutorization.getInputValues());
+    formAutorization.renderPage(localStorage.token);
   }
 );
 
@@ -129,4 +75,4 @@ profileLinkAvatar.addEventListener('click', () => {
   popupAutorization.open();
 });
 
-renderPage(localStorage.token);
+formAutorization.renderPage(localStorage.token);
