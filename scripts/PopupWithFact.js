@@ -97,4 +97,8 @@ export class PopupWithFact extends Popup {
       this.checkTrue(evt);
     });
   }
+
+  test() {
+    console.log(this._popup)
+  }
 }

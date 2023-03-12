@@ -21,6 +21,17 @@ export const varConfig = {
   counterIncorrect: 0,
 };
 
+export const popupFormConfig = {
+  // popupSelector: '.popup_type_autorization',
+  buttonCloseSelector: '.popup__button-close',
+};
+
+export const tabListConfig = {
+  popupSelector: '.popup_type_autorization',
+  tabsSelector: '.popup__tabs-list',
+  formsSelector: '.popup__forms-list'
+}
+
 export const facts = [
   {
     question: 'Растений на Земле больше, чем звезд в Нашей Галактике.',

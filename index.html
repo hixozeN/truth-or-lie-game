@@ -23,8 +23,7 @@
         <div class="profile">
           <img src="./images/unknown.svg" alt="" class="profile__avatar">
           <h2 class="profile__nickname">Unknown</h2>
-
-          <nav class="profile__navigation ">
+          <nav class="profile__navigation navigation ">
             <ul class="navigation__list">
               <li class="navigation__item">
                 <a href="" class="navigation__link">Профиль</a>
@@ -50,7 +49,12 @@
 
     <section class="section-profile">
       <div class="profile">
-        <img src="./images/unknown.svg" alt="" class="profile__avatar">
+        <a href="#" class="profile__link">
+          <img
+            src="./images/unknown.svg"
+            alt=""
+            class="profile__avatar" />
+        </a>
         <h2 class="profile__nickname">Unknown</h2>
       </div>
     </section>
@@ -77,124 +81,164 @@
     <div class="popup popup_type_autorization">
       <div class="popup__content popup__content_type_autorization">
         <div class="popup__forms">
-          <nav class="popup__forms-navigation">
-            <ul class="navigation__list">
-              <li class="navigation__item">
-                <a class="navigation__link"
-                  href="#">Зарегистрироваться</a>
+          <nav class="popup__forms-navigation navigation">
+            <ul class="navigation__list popup__tabs-list">
+              <li class="navigation__item popup__tabs-item">
+                <a class="navigation__link popup__tabs-link"
+                  href="#"
+                  id="registration">
+                  Зарегистрироваться
+                </a>
               </li>
-              <li class="navigation__item">
-                <a class="navigation__link"
-                  href="#">Войти</a>
+
+              <li class="navigation__item popup__tabs-item">
+                <a class="navigation__link popup__tabs-link
+                  navigation__link_current"
+                  href="#"
+                  id="autorization">
+                  Авторизоваться</a>
               </li>
             </ul>
           </nav>
-          <div class="container-form">
-            <h2 class="container-form__heading">Регистрация</h2>
-            <form class="form form_type_registration"
-              method="post"
-              action="http://45.146.165.205:3000/"
-              enctype="application/json"
-              name="autorization"
-              novalidate>
+          <ul class="popup__forms-list">
+            <li class="popup__container-form"
+              id="form-registration">
+              <!-- <h2 class="popup__container-form__heading">Регистрация</h2> -->
+              <form
+                class="form form_type_registration"
+                method="post"
+                action="http://45.146.165.205:3000/"
+                enctype="multipart/form-data"
+                name="registration"
+                novalidate>
+                <ul class="form__list">
+                  <li class="form__item">
+                    <label class="form__label">
+                      <input class="form__input
+                        form__input_type_login"
+                        type="text"
+                        name="login"
+                        placeholder="Придумайте логин"
+                        minlength="2"
+                        maxlength="40"
+                        required>
+                      <span class="form__error login-error">
+                      </span>
+                    </label>
+                  </li>
+                  <li class="form__item">
+                    <label class="form__label">
+                      <input class="form__input form__input_type_password"
+                        type="password"
+                        name="password"
+                        placeholder="Придумайте пароль"
+                        minlength="2"
+                        maxlength="40"
+                        required>
+                      <span class="form__error password-error">
+                      </span>
+                    </label>
+                  </li>
+                  <li class="form__item">
+                    <label class="form__label">
+                      <input
+                        class="form__input
+                        form__input_type_password"
+                        type="password"
+                        name="confirm-password"
+                        placeholder="Подтвердите пароль"
+                        minlength="2"
+                        maxlength="40"
+                        required>
+                      <span class="form__error confirm-password-error">
+                      </span>
+                    </label>
+                  </li>
+                </ul>
 
-              <label class="form__label">
-                <input class="form__input
-                  form__input_type_login"
-                  type="text"
-                  name="login"
-                  placeholder="Придумайте логин"
-                  minlength="2"
-                  maxlength="40"
-                  required>
-                <span class="form__error login-error">
-                </span>
-              </label>
+                <button class="form__button-save button"
+                  type="submit">
+                  Регистрация
+                </button>
+              </form>
+            </li>
 
-              <label class="form__label">
-                <input class="form__input form__input_type_password"
-                  type="password"
-                  name="password"
-                  placeholder="Придумайте пароль"
-                  minlength="2"
-                  maxlength="200"
-                  required>
-                <span class="form__error password-error">
-                </span>
-              </label>
+            <li class="popup__container-form popup__container-form_active"
+              id="form-autorization">
+              <!-- <h2 class="popup__container-form__heading">Авторизация</h2> -->
+              <form class="form form_type_autorization "
+                method="post"
+                action="http://45.146.165.205:3000/auth/users"
+                enctype="multipart/form-data"
+                name="autorization"
+                novalidate>
+                <ul class="form__list">
+                  <li class="form__item">
+                    <label class="form__label">
+                      <input class="form__input
+                        form__input_type_login"
+                        type="text"
+                        name="login"
+                        placeholder="Введите ваш логин"
+                        minlength="2"
+                        maxlength="40"
+                        required>
+                      <span class="form__error login-error">
+                      </span>
+                    </label>
+                  </li>
 
-              <label class="form__label">
-                <input class="form__input form__input_type_password"
-                  type="password"
-                  name="password"
-                  placeholder="Подтвердите пароль"
-                  minlength="2"
-                  maxlength="200"
-                  required>
-                <span class="form__error password-error">
-                </span>
-              </label>
+                  <li class="form__item">
+                    <label class="form__label">
+                      <input class="form__input form__input_type_job"
+                        type="password"
+                        name="password"
+                        placeholder="Введите Ваш пароль"
+                        minlength="2"
+                        maxlength="40"
+                        required>
+                      <span class="form__error password-error">
+                      </span>
+                    </label>
+                  </li>
 
-              <button class="form__button-save button"
-                type="submit">
-                Регистрация
-              </button>
-            </form>
-          </div>
+                  <li class="form__item">
+                    <input class="form__input form__input_type_checkbox
+                      popup__input_type_job visually-hidden "
+                      type="checkbox"
+                      name="check-in"
+                      id="check-in">
+                    <label class="form__label forme__label_type_checkbox"
+                      for="check-in">
+                      Запомнить меня
+                    </label>
+                  </li>
+                </ul>
 
-          <div class="container-form hidden">
-            <h2 class="container-form__heading">Авторизация</h2>
-            <form class="form form_type_autorization"
-              method="post"
-              action="http://45.146.165.205:3000/auth/users"
-              enctype="application/json"
-              name="autorization"
-              novalidate>
-
-              <label class="form__label">
-                <input class="form__input
-                  form__input_type_login"
-                  type="text"
-                  name="login"
-                  placeholder="Введите ваш логин"
-                  minlength="2"
-                  maxlength="40"
-                  required>
-                <span class="popup__error name-error">
-                </span>
-              </label>
-
-              <label class="popup__label">
-                <input class="popup__input popup__input_type_job"
-                  type="password"
-                  name="password"
-                  placeholder="Введите Ваш пароль"
-                  minlength="2"
-                  maxlength="200"
-                  required>
-                <span class="popup__error job-error">
-                </span>
-              </label>
-
-              <button class="popup__button-save button"
-                type="submit">
-                Вход
-              </button>
-            </form>
-          </div>
-          <button class="popup__button-close button"
-            type="button"
-            aria-label="Закрыть">
-          </button>
+                <button class="form__button-save button"
+                  type="submit">
+                  Вход
+                </button>
+              </form>
+            </li>
+            <button class="popup__button-close button"
+              type="button"
+              aria-label="Закрыть">
+            </button>
+          </ul>
         </div>
       </div>
     </div>
 
     <div class="results">
-      <p class="results__correct">Правильных ответов: <span
-          class="results__correct-count">0</span></p>
-      <p class="result__incorrect">Неправильных: <span
-          class="results__incorrect-count">0</span></p>
+      <p class="results__correct">
+        Правильных ответов:
+        <span class="results__correct-count">0</span>
+      </p>
+      <p class="results__incorrect">
+        Неправильных:
+        <span class="results__incorrect-count">0</span>
+      </p>
     </div>
   </body>
 

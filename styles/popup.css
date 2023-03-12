@@ -13,6 +13,7 @@
   opacity: 0;
   will-change: transition;
   transition: 0.1s all linear;
+  overflow: hidden;
 }
 
 .popup_opened {
@@ -69,21 +70,62 @@
   }
 }
 
+.popup__forms {
+  width: 100%;
+}
+
 .popup_type_autorization {
-  background-color: var(--color-second-20);
+  background-color: var(--color-black-50);
 }
 
 .popup__content_type_autorization {
-  background-color: var(--color-second);
+  background-color: var(--color-alternative);
+  min-height: 520px;
 }
 
 .popup__button-close {
   position: absolute;
-
-  width: 32px;
-  height: 32px;
-  top: -40px;
-  right: -40px;
-
+  width: calc(var(--index)*1.5);
+  height: calc(var(--index)*1.5);
+  top: 0;
+  right: 0;
+  transform: translate(115%, -115%);
   border: none;
+  -webkit-transform: translate(115%, -115%);
+  -moz-transform: translate(115%, -115%);
+  -ms-transform: translate(115%, -115%);
+  -o-transform: translate(115%, -115%);
+
+  background: url('../images/icons/icon-close.svg') center / cover no-repeat;
+}
+
+.popup__container-form {
+  display: none;
+  justify-content: center;
+}
+
+.popup__container-form_active {
+  display: flex;
+}
+
+.popup__tabs-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.popup__tabs-item {
+  padding: 0;
+}
+
+.popup__tabs-link {
+  display: block;
+  width: 100%;
+  color: var(--color-dark-20);
+  text-align: center;
+  padding: 20px 0 20px;
+}
+
+.popup__forms-list {
+  padding: 0;
+  list-style: none;
 }
