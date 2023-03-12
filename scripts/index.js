@@ -3,11 +3,13 @@ import BurgerMenu from './Burger-menu.js';
 import Fact from './Fact.js';
 import { PopupWithFact } from './PopupWithFact.js';
 import PopupWithForm from './PopupWithForm.js';
-import Form from './Form.js';
 import FormAuth from './FormAuth.js';
+import FormReg from './FormReg.js';
 import TabList from './TabList.js';
 
 const profileLinkAvatar = document.querySelector('.profile__link');
+const buttonSignIn = document.querySelector('.navigation__link_type_sign-in');
+const buttonSignUp = document.querySelector('.navigation__link_type_sign-up');
 
 const getFact = new Fact(varConfig); // Получаем экземпляр класса Fact. Метод: .fetchRandomFact();
 const burgerMenu = new BurgerMenu(); // Получаем экземпляр класса BurgerMenu. Метод: .activateBurgerMenu();
@@ -36,10 +38,11 @@ const formAutorization = new FormAuth(
     formAutorization.setLocalStorage();
 
     formAutorization.renderPage(localStorage.token);
+    profileLinkAvatar.removeEventListener('click', openAuthPopup);
   }
 );
 
-const formRegistration = new Form(
+const formRegistration = new FormReg(
   'registration',
   async () => {
     popupAutorization.close();
@@ -48,13 +51,12 @@ const formRegistration = new Form(
         "Content-type": "application/json"
       },
       method: "POST",
-      body: JSON.stringify(state.formData)
+      body: JSON.stringify(formRegistration.getInputValues())
     })
       .then(res => res.json())
-      .then(data => state.resData = data)
+      .then(data => formRegistration.storeResponse(data))
 
-    console.log(state.resData)
-    console.log(formRegistration.getInputValues());
+    popupAutorization.open();
   }
 );
 const popupAutorization = new PopupWithForm(
@@ -71,8 +73,20 @@ burgerMenu.activateBurgerMenu();
 getFact.fetchRandomFact();
 popupWithFact.setEventListeners();
 
-profileLinkAvatar.addEventListener('click', () => {
+export const openAuthPopup = () => {
+  tabListAutorization.openTab('autorization');
+  popupAutorization.open()
+}
+
+profileLinkAvatar.addEventListener('click', openAuthPopup);
+buttonSignIn.addEventListener('click', () => {
+  openAuthPopup();
+  burgerMenu._closeBurgerMenu();
+});
+buttonSignUp.addEventListener('click', () => {
+  tabListAutorization.openTab('registration');
   popupAutorization.open();
+  burgerMenu._closeBurgerMenu();
 });
 
 formAutorization.renderPage(localStorage.token);

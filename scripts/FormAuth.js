@@ -1,4 +1,5 @@
 import Form from "./Form.js";
+import { openAuthPopup } from '../scripts/index.js';
 
 export default class FormAuth extends Form {
   constructor(formName, submitCallback) {
@@ -7,6 +8,7 @@ export default class FormAuth extends Form {
     this._profileAuth = document.querySelector('.profile_user');
     this._profileGuest = document.querySelector('.profile_guest');
     this._profileName = document.querySelectorAll('.profile__nickname');
+    this._avatar = document.querySelector('.profile__link');
     this._state = {
       resData: {}
     }
@@ -44,6 +46,7 @@ export default class FormAuth extends Form {
       delete localStorage.username;
       delete localStorage.token;
       this.renderPage(localStorage.token);
+      this._avatar.addEventListener('click', openAuthPopup);
     });
   }
 }
