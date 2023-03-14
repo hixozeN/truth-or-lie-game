@@ -29,3 +29,15 @@
 .profile__navigation {
   margin-left: 25px;
 }
+
+.profile_guest {
+  display: none;
+}
+
+.profile_user {
+  display: none;
+}
+
+.profile_active {
+  display: flex;
+}

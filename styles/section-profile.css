@@ -1,0 +1,14 @@
+.section-profile {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 75px 35px 0;
+  visibility: visible;
+  opacity: 1;
+  transition: all 1s linear;
+}
+
+.section-profile_hide {
+  visibility: hidden;
+  opacity: 0;
+}
