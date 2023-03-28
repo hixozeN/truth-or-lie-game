@@ -12,6 +12,8 @@
 @import url(./form.css);
 @import url(./results.css);
 
+@import url(./section-profile.css);
+
 .root {
   min-height: 90vh;
   display: flex;
@@ -40,11 +42,4 @@
 
 .header {
   display: flex;
-}
-
-.section-profile {
-  position: absolute;
-  top: 0;
-  right: 0;
-  margin: 75px 35px 0;
 }
