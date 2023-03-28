@@ -10,7 +10,7 @@ class Fact {
   async fetchRandomFact() {
     // оборачиваем запрос в промис
     this._promise = new Promise(async (resolve, reject) => {
-      let res = await fetch('http://45.146.165.205:3000/facts/getRandomFact');
+      let res = await fetch('http://hixozen.ru:3000/facts/getRandomFact');
       resolve(res.json());
     }).then(
       (fact) => {
