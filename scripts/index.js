@@ -1,4 +1,4 @@
-import { varConfig, popupFormConfig, tabListConfig } from './conf.js';
+import { varConfig, popupFormConfig, tabListConfig, facts } from './conf.js';
 import BurgerMenu from './Burger-menu.js';
 import Fact from './Fact.js';
 import { PopupWithFact } from './PopupWithFact.js';
@@ -90,3 +90,15 @@ buttonSignUp.addEventListener('click', () => {
 });
 
 formAutorization.renderPage(localStorage.token);
+
+const calc = () => {
+  let res = "";
+  facts.forEach(fact => {
+    if (fact.question.length == 360) {
+      res = fact.question
+    }
+  })
+  console.log(res)
+}
+
+calc()

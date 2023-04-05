@@ -1,0 +1,7 @@
+.popup__tabs-link {
+  display: block;
+  width: 100%;
+  color: var(--color-dark-20);
+  text-align: center;
+  padding: 20px 0 20px;
+}

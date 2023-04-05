@@ -1,0 +1,23 @@
+.form__input_type_checkbox + label::after {
+  content: "";
+  position: absolute;
+  top: 3px;
+  left: 0;
+  width: 30px;
+  height: 30px;
+  background-image: url(../../../../../images/icons/checkmark.svg);
+  background-repeat: no-repeat;
+  background-position: 0 0;
+}
+
+.form__input_type_checkbox:checked + label::after {
+  content: "";
+  position: absolute;
+  top: 3px;
+  left: 0;
+  width: 30px;
+  height: 30px;
+  background-image: url(../../../../../images/icons/checkmark-filled.svg);
+  background-repeat: no-repeat;
+  background-position: 0 0;
+}

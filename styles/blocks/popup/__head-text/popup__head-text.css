@@ -1,0 +1,4 @@
+.popup__head-text {
+  margin: 0px;
+  font-size: calc(var(--index) * 1.6);
+}

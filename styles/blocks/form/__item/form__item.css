@@ -1,0 +1,7 @@
+.form__item {
+  min-height: 21px;
+}
+
+.form__input::placeholder {
+  color: var(--color-black-50);
+}

@@ -1,0 +1,10 @@
+.form__label {
+  display: block;
+  position: relative;
+  color: var(--color-dark);
+  min-height: 41px;
+}
+
+.form__label:last-of-type {
+  margin-bottom: 18px;
+}

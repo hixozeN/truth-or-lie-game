@@ -1,0 +1,4 @@
+.button_type_negative {
+  background-color: var(--color-negative);
+  color: var(--color-text);
+}

@@ -1,0 +1,12 @@
+.main__head-text {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  font-size: 62px;
+}
+
+@media screen and (max-width: 2000px) {
+  .main__head-text {
+    font-size: calc(24px + 38 * (100vw / 2000));
+  }
+}
