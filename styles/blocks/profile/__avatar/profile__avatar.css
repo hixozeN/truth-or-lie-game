@@ -1,0 +1,12 @@
+.profile__avatar {
+  display: block;
+  width: 100px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  margin-top: 50px;
+  align-self: center;
+}

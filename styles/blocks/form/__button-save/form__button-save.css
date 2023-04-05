@@ -1,0 +1,7 @@
+.form__button-save {
+  align-self: center;
+  background-color: var(--color-main);
+  color: var(--color-light);
+  font-size: calc(var(--index));
+  height: 75px;
+}

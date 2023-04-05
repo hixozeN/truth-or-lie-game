@@ -1,0 +1,4 @@
+.button_type_positive {
+  background-color: var(--color-positive);
+  color: var(--color-text);
+}

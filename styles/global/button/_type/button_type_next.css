@@ -1,0 +1,7 @@
+.button_type_next {
+  width: 250px;
+  height: calc(var(--index) * 3);
+  background-color: var(--color-main);
+  color: var(--color-text);
+  font-size: calc(var(--index) * 1.1)
+}

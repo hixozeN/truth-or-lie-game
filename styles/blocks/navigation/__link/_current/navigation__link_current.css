@@ -1,0 +1,4 @@
+.navigation__link_current {
+  color: var(--color-dark);
+  border-bottom: 2px solid var(--color-dark);
+}

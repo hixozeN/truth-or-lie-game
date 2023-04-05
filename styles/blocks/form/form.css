@@ -1,0 +1,9 @@
+.form {
+  display: flex;
+  width: calc(var(--index)*20);
+  max-width: 450px;
+  padding-top: 25px;
+  flex-direction: column;
+  min-height: 300px;
+  justify-content: space-between;
+}

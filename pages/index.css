@@ -1,0 +1,94 @@
+@import url(../vendor/normalize.css);
+@import url(../vendor/fonts.css);
+@import url(../vendor/variables.css);
+
+@import url(../styles/blocks/main/main.css);
+@import url(../styles/blocks/main/__head-text/main__head-text.css);
+@import url(../styles/blocks/main/__question-text/main__question-text.css);
+
+@import url(../styles/global/button/button.css);
+@import url(../styles/global/button/_type/button_type_negative.css);
+@import url(../styles/global/button/_type/button_type_positive.css);
+@import url(../styles/global/button/_type/button_type_next.css);
+
+@import url(../styles/blocks/popup/popup.css);
+@import url(../styles/blocks/popup/__answer-text/popup__answer-text.css);
+@import url(../styles/blocks/popup/__button-close/popup__button-close.css);
+@import url(../styles/blocks/popup/__container-form/popup__container-form.css);
+@import url(../styles/blocks/popup/__container-form/_active/popup__container-form_active.css);
+@import url(../styles/blocks/popup/__content/popup__content.css);
+@import url(../styles/blocks/popup/__content/_type/popup__content_type_autorization.css);
+@import url(../styles/blocks/popup/__content/_type/popup__content_type_fail.css);
+@import url(../styles/blocks/popup/__content/_type/popup__content_type_success.css);
+@import url(../styles/blocks/popup/__forms/popup__forms.css);
+@import url(../styles/blocks/popup/__forms-list/popup__forms-list.css);
+@import url(../styles/blocks/popup/__head-text/popup__head-text.css);
+@import url(../styles/blocks/popup/__tabs-item/popup__tabs-item.css);
+@import url(../styles/blocks/popup/__tabs-link/popup__tabs-link.css);
+@import url(../styles/blocks/popup/__tabs-list/popup__tabs-list.css);
+@import url(../styles/blocks/popup/_opened/popup_opened.css);
+@import url(../styles/blocks/popup/_type/popup_type_autorization.css);
+
+@import url(../styles/blocks/burger-menu/burger-menu.css);
+@import url(../styles/blocks/burger-menu/__lines/burger-menu__lines.css);
+@import url(../styles/blocks/burger-menu/__toggle/burger-menu__toggle.css);
+@import url(../styles/blocks/burger-menu/_active/burger-menu_active.css);
+
+@import url(../styles/blocks/navigation/navigation.css);
+@import url(../styles/blocks/navigation/__item/navigation__item.css);
+@import url(../styles/blocks/navigation/__link/navigation__link.css);
+@import url(../styles/blocks/navigation/__link/_current/navigation__link_current.css);
+@import url(../styles/blocks/navigation/__list/navigation__list.css);
+
+@import url(../styles/blocks/profile/profile.css);
+@import url(../styles/blocks/profile/__avatar/profile__avatar.css);
+@import url(../styles/blocks/profile/__link/profile__link.css);
+@import url(../styles/blocks/profile/__navigation/profile__navigation.css);
+@import url(../styles/blocks/profile/__nickname/profile__nickname.css);
+@import url(../styles/blocks/profile/_type/profile_type_guest.css);
+@import url(../styles/blocks/profile/_type/profile_type_user.css);
+@import url(../styles/blocks/profile/_active/profile_active.css);
+
+@import url(../styles/blocks/form/form.css);
+@import url(../styles/blocks/form/__button-save/form__button-save.css);
+@import url(../styles/blocks/form/__input/form__input.css);
+@import url(../styles/blocks/form/__input/_type/form__input_type_checkbox.css);
+@import url(../styles/blocks/form/__item/form__item.css);
+@import url(../styles/blocks/form/__label/form__label.css);
+@import url(../styles/blocks/form/__label/_type/form__label_type_checkbox.css);
+@import url(../styles/blocks/form/__list/form__list.css);
+
+@import url(../styles/blocks/results/results.css);
+
+@import url(../styles/blocks/section-profile/section-profile.css);
+@import url(../styles/blocks/section-profile/_hide/section-profile__hide.css);
+
+.root {
+  min-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  background-color: var(--color-dark);
+  color: var(--color-light);
+  font-family: 'Inter', sans-serif;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  -webkit-clip-path: inset(100%);
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+.header {
+  display: flex;
+}

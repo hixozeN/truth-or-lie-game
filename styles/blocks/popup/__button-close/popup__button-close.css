@@ -1,0 +1,15 @@
+.popup__button-close {
+  position: absolute;
+  width: calc(var(--index)*1.5);
+  height: calc(var(--index)*1.5);
+  top: 0;
+  right: 0;
+  transform: translate(115%, -115%);
+  border: none;
+  -webkit-transform: translate(115%, -115%);
+  -moz-transform: translate(115%, -115%);
+  -ms-transform: translate(115%, -115%);
+  -o-transform: translate(115%, -115%);
+
+  background: url('../../../../images/icons/icon-close.svg') center / cover no-repeat;
+}
