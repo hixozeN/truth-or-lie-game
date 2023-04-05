@@ -45,9 +45,9 @@
 @import url(../styles/blocks/profile/__link/profile__link.css);
 @import url(../styles/blocks/profile/__navigation/profile__navigation.css);
 @import url(../styles/blocks/profile/__nickname/profile__nickname.css);
-@import url(../styles/blocks/profile/_active/profile_active.css);
 @import url(../styles/blocks/profile/_type/profile_type_guest.css);
 @import url(../styles/blocks/profile/_type/profile_type_user.css);
+@import url(../styles/blocks/profile/_active/profile_active.css);
 
 @import url(../styles/blocks/form/form.css);
 @import url(../styles/blocks/form/__button-save/form__button-save.css);
