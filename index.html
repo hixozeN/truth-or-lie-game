@@ -6,8 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="./styles/styles.css">
-    <script type="module" src="./scripts/index.js" defer></script>
+  <link rel="stylesheet" href="./pages/index.css">
+  <script type="module" src="./scripts/index.js" defer></script>
 
     <title>Правда или ложь?</title>
   </head>
@@ -19,8 +19,8 @@
           <span class="burger-menu__lines"></span>
         </a>
 
-        <div class="profile profile_user profile_active">
-          <img src="./images/unknown.svg" alt="" class="profile__avatar">
+      <div class="profile profile_type_user">
+        <img src="./images/unknown.svg" alt="" class="profile__avatar">
           <h2 class="profile__nickname">Unknown</h2>
           <nav class="profile__navigation navigation ">
             <ul class="navigation__list">
@@ -43,20 +43,20 @@
           </nav>
         </div>
 
-        <div class="profile profile_guest">
-          <img src="./images/unknown.svg" alt="" class="profile__avatar">
-          <h2 class="profile__nickname">Unknown</h2>
-          <nav class="profile__navigation navigation ">
-            <ul class="navigation__list">
-              <li class="navigation__item">
-                <a class="navigation__link navigation__link_type_sign-in">Войти</a>
-              </li>
-              <li class="navigation__item">
-                <a class="navigation__link navigation__link_type_sign-up">Зарегистрироваться</a>
-              </li>
-            </ul>
-          </nav>
-        </div>
+      <div class="profile profile_type_guest profile_active">
+        <img src="./images/unknown.svg" alt="" class="profile__avatar">
+        <h2 class="profile__nickname">Unknown</h2>
+        <nav class="profile__navigation navigation ">
+          <ul class="navigation__list">
+            <li class="navigation__item">
+              <a class="navigation__link navigation__link_type_sign-in">Войти</a>
+            </li>
+            <li class="navigation__item">
+              <a class="navigation__link navigation__link_type_sign-up">Зарегистрироваться</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
 
       </div>
     </header>
@@ -181,16 +181,14 @@
                     </label>
                   </li>
 
-                  <li class="form__item">
-                    <input class="form__input form__input_type_checkbox
-                      popup__input_type_job visually-hidden " type="checkbox"
-                      name="check-in" id="check-in">
-                    <label class="form__label forme__label_type_checkbox"
-                      for="check-in">
-                      Запомнить меня
-                    </label>
-                  </li>
-                </ul>
+                <li class="form__item">
+                  <input class="form__input form__input_type_checkbox
+                      popup__input_type_job visually-hidden " type="checkbox" name="check-in" id="check-in">
+                  <label class="form__label form__label_type_checkbox" for="check-in">
+                    Запомнить меня
+                  </label>
+                </li>
+              </ul>
 
                 <button class="form__button-save button" type="submit">
                   Вход

@@ -1,17 +1,3 @@
-/* .navigation {
-
-} */
-
-.navigation__list {
-  padding: 0;
-  list-style: none;
-  margin: 0;
-}
-
-.navigation__item {
-  padding-bottom: 10px;
-}
-
 .navigation__link {
   text-decoration: none;
   color: var(--color-light);
@@ -24,9 +10,4 @@
 
 .navigation__link:hover {
 color: var(--color-hover);
-}
-
-.navigation__link_current {
-  color: var(--color-dark);
-  border-bottom: 2px solid var(--color-dark);
 }

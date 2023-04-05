@@ -7,8 +7,3 @@
   opacity: 1;
   transition: all 1s linear;
 }
-
-.section-profile_hide {
-  visibility: hidden;
-  opacity: 0;
-}

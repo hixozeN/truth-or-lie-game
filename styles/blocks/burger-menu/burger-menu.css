@@ -1,0 +1,21 @@
+.burger-menu {
+  position: fixed;
+  display: flex;
+  right: 0;
+  top: 0;
+  width: 400px;
+  height: 100vh;
+  flex-direction: column;
+  transform: translateX(400px);
+  z-index: 5;
+  -webkit-transform: translateX(400px);
+  -moz-transform: translateX(400px);
+  -ms-transform: translateX(400px);
+  -o-transform: translateX(400px);
+  background-color: var(--color-second);
+  transition: transform 1s ease-in-out;
+  -webkit-transition: transform 1s ease-in-out;
+  -moz-transition: transform 1s ease-in-out;
+  -ms-transition: transform 1s ease-in-out;
+  -o-transition: transform 1s ease-in-out;
+}

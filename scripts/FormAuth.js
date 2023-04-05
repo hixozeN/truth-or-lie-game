@@ -5,8 +5,8 @@ export default class FormAuth extends Form {
   constructor(formName, submitCallback) {
     super(formName, submitCallback);
     this._buttonLogout = document.querySelector('.button_type_logout');
-    this._profileAuth = document.querySelector('.profile_user');
-    this._profileGuest = document.querySelector('.profile_guest');
+    this._profileAuth = document.querySelector('.profile_type_user');
+    this._profileGuest = document.querySelector('.profile_type_guest');
     this._profileName = document.querySelectorAll('.profile__nickname');
     this._avatar = document.querySelector('.profile__link');
     this._state = {

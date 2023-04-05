@@ -1,0 +1,8 @@
+.form__input {
+  border: none;
+  padding: 10px 0 10px;
+  border-bottom: 1px solid var(--color-black-50);
+  width: 100%;
+  opacity: 1;
+  background-color: var(--color-alternative);
+}
