@@ -10,14 +10,14 @@ class Fact {
   async fetchRandomFact() {
     // оборачиваем запрос в промис
     this._promise = new Promise(async (resolve, reject) => {
-      let res = await fetch('http://hixozen.ru:3000/facts/getRandomFact');
+      let res = await fetch('https://api.quiz.hixozen.ru/facts');
       resolve(res.json());
     }).then(
       (fact) => {
-        this._question = fact.question; // Записываем вопрос факта
-        this._answer = fact.answer; // Записываем правильный ответ на факт
-        this._isFactTrue = fact.isTrue; // Записываем булевое значение факта - правдивый или нет
-        this._questionTextSelector.textContent = fact.question; // Записываем вопрос на главной странице
+        this._question = fact.data.question; // Записываем вопрос факта
+        this._answer = fact.data.answer; // Записываем правильный ответ на факт
+        this._isFactTrue = fact.data.isTrue; // Записываем булевое значение факта - правдивый или нет
+        this._questionTextSelector.textContent = fact.data.question; // Записываем вопрос на главной странице
       }
       /*
     При успешном ответе вызываем метод, который обработает полученный факт
