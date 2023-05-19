@@ -1,5 +1,6 @@
 import Form from "./Form.js";
-import { openAuthPopup } from '../scripts/index.js';
+import { openAuthPopup } from '../../index.js';
+import { LOCAL_STORAGE_TOKEN_KEY } from "../../utils/conf.js";
 
 export default class FormAuth extends Form {
   constructor(formName, submitCallback) {
@@ -18,15 +19,37 @@ export default class FormAuth extends Form {
     this._state.resData = res;
   }
 
+  getBody() {
+    super.getInputValues();
+    return {
+      email: this._state.inputValues.email,
+      password: this._state.inputValues.password
+    };
+  }
+
+  _fetchUserData() {
+    return fetch('https://api.quiz.hixozen.ru', {
+      headers: {
+        "Content-Type": "application/json",
+      },
+    })
+      .then(res => {
+        if (res.ok) return res.json();
+        return Promise.reject(res.message);
+      })
+      .then(userData => this._state.userData = userData)
+      .catch(err => console.log(err))
+  }
+
   setLocalStorage() {
-    localStorage.setItem('token', this._state.resData.token);
-    localStorage.setItem('username', this._state.resData.user.username);
+    this._fetchUserData();
+    localStorage.setItem(LOCAL_STORAGE_TOKEN_KEY, this._state.userData.token);
   }
 
   _loggedInSettingsForRender() {
     this._profileAuth.classList.add('profile_active');
     this._profileGuest.classList.remove('profile_active');
-    this._profileName.forEach(nickname => nickname.textContent = localStorage.username)
+    this._profileName.forEach(nickname => nickname.textContent = localStorage.name)
   }
 
   _guestSettingsForRender() {
@@ -43,7 +66,7 @@ export default class FormAuth extends Form {
     super.setEventListeners();
 
     this._buttonLogout.addEventListener('click', () => {
-      delete localStorage.username;
+      delete localStorage.name;
       delete localStorage.token;
       this.renderPage(localStorage.token);
       this._avatar.addEventListener('click', openAuthPopup);
