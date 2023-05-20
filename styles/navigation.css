@@ -27,6 +27,6 @@ color: var(--color-hover);
 }
 
 .navigation__link_current {
-  color: var(--color-dark);
-  border-bottom: 2px solid var(--color-dark);
+  color: var(--color-light);
+  border-bottom: 2px solid var(--color-light);
 }
