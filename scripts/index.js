@@ -6,13 +6,12 @@ import PopupWithForm from './components/Popup/PopupWithForm.js';
 import FormAuth from './components/Form/FormAuth.js';
 import FormReg from './components/Form/FormReg.js';
 import TabList from './components/TabList/TabList.js';
-import Api from './utils/Api.js';
+import { api } from './utils/Api.js';
 
 const profileLinkAvatar = document.querySelector('.profile__link');
 const buttonSignIn = document.querySelector('.navigation__link_type_sign-in');
 const buttonSignUp = document.querySelector('.navigation__link_type_sign-up');
 
-const api = new Api();
 const getFact = new Fact(varConfig); // Получаем экземпляр класса Fact. Метод: .fetchRandomFact();
 const burgerMenu = new BurgerMenu(); // Получаем экземпляр класса BurgerMenu. Метод: .activateBurgerMenu();
 const popupWithFact = new PopupWithFact(
@@ -25,19 +24,22 @@ const popupWithFact = new PopupWithFact(
 
 const formAutorization = new FormAuth(
   'autorization',
-  () => {
-    popupAutorization.close();
-    console.log(formAutorization.getBody())
-    // продумай логику получения токена и данных пользователя
-    // для рендера
-    api.login(formAutorization.getBody())
-      .then((res) => {
-        formAutorization.setLocalStorage();
+  async () => {
+    await api.login(formAutorization.getBody())
+      .then( async (res) => {
+        localStorage.setItem('token', res.token);
+        await api.getCurrentUserData()
+          .then((user) => {
+            localStorage.setItem('name', user.data.name);
+            localStorage.setItem('email', user.data.email);
+            localStorage.setItem('id', user.data._id);
+          })
+          .catch((err) => console.log(err));
         formAutorization.renderPage(localStorage.token);
+        profileLinkAvatar.removeEventListener('click', openAuthPopup);
+        popupAutorization.close();
       })
       .catch((err) => console.log(err));
-      
-    profileLinkAvatar.removeEventListener('click', openAuthPopup);
   }
 );
 

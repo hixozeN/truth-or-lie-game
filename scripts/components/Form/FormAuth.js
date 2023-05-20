@@ -1,6 +1,5 @@
 import Form from "./Form.js";
 import { openAuthPopup } from '../../index.js';
-import { LOCAL_STORAGE_TOKEN_KEY } from "../../utils/conf.js";
 
 export default class FormAuth extends Form {
   constructor(formName, submitCallback) {
@@ -11,7 +10,6 @@ export default class FormAuth extends Form {
     this._profileName = document.querySelectorAll('.profile__nickname');
     this._avatar = document.querySelector('.profile__link');
     this._state = {
-      resData: {}
     }
   }
 
@@ -27,28 +25,15 @@ export default class FormAuth extends Form {
     };
   }
 
-  _fetchUserData() {
-    return fetch('https://api.quiz.hixozen.ru', {
-      headers: {
-        "Content-Type": "application/json",
-      },
-    })
-      .then(res => {
-        if (res.ok) return res.json();
-        return Promise.reject(res.message);
-      })
-      .then(userData => this._state.userData = userData)
-      .catch(err => console.log(err))
-  }
-
-  setLocalStorage() {
-    this._fetchUserData();
-    localStorage.setItem(LOCAL_STORAGE_TOKEN_KEY, this._state.userData.token);
+  resetForm() {
+    this._form.reset();
   }
 
   _loggedInSettingsForRender() {
     this._profileAuth.classList.add('profile_active');
     this._profileGuest.classList.remove('profile_active');
+    this._avatar.removeEventListener('click', openAuthPopup);
+    this._avatar.style.cursor = 'auto';
     this._profileName.forEach(nickname => nickname.textContent = localStorage.name)
   }
 
@@ -67,7 +52,10 @@ export default class FormAuth extends Form {
 
     this._buttonLogout.addEventListener('click', () => {
       delete localStorage.name;
+      delete localStorage.email;
+      delete localStorage.id;
       delete localStorage.token;
+      this._avatar.style.cursor = 'pointer';
       this.renderPage(localStorage.token);
       this._avatar.addEventListener('click', openAuthPopup);
     });

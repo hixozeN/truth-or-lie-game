@@ -28,7 +28,6 @@ export default class Form {
     this._form.addEventListener("submit", (evt) => {
       evt.preventDefault();
       this._submitCallback();
-      this._form.reset();
     });
   }
 }

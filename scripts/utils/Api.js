@@ -50,6 +50,16 @@ class Api {
       .then((res) => this._checkResponse(res));
   };
 
+  getCurrentUserData() {
+    return fetch(this._API_URL + '/users/me', {
+      headers: {
+        "Content-Type": "application/json",
+        authorization: `Bearer ${localStorage.getItem(LOCAL_STORAGE_TOKEN_KEY)}`,
+      },
+    })
+      .then((res) => this._checkResponse(res));
+  }
+
   getUserById(id) {
     return fetch(this._API_URL + '/users/' + id, {
       headers: {
@@ -109,4 +119,4 @@ class Api {
   }
 };
 
-export default Api;
+export const api = new Api();

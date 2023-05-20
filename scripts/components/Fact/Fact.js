@@ -1,6 +1,4 @@
-import Api from "../../utils/Api.js";
-
-const api = new Api();
+import { api } from "../../utils/Api.js";
 
 class Fact {
   constructor(config) {

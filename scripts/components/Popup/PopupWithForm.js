@@ -10,18 +10,9 @@ export default class PopupWithForm extends Popup {
 
   close() {
     super._closePopup();
-    // this._formList.forEach(form => form.reset());
   }
 
   _switchForm(evt) {
     evt.target
-  }
-
-  _sdf() {
-    this._formList.forEach((form) => {
-      const inputName = input.getAttribute('name')
-      form.value = data[`${inputName}`];
-    });
-    return
   }
 }
