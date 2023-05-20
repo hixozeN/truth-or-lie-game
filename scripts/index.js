@@ -46,20 +46,17 @@ const formAutorization = new FormAuth(
 
 const formRegistration = new FormReg(
   'registration',
-  async () => {
-    popupAutorization.close();
+  () => {
     console.log(formRegistration.getBody())
-    await fetch('https://api.quiz.hixozen.ru/register', {
-      headers: {
-        "Content-type": "application/json"
-      },
-      method: "POST",
-      body: JSON.stringify(formRegistration.getBody())
-    })
-      .then(res => res.json())
-      .then(data => formRegistration.storeResponse(data))
-
-    popupAutorization.open();
+    api.register(formRegistration.getBody())
+      .then((res) => {
+        formAutorization.autoCompleteLoginInputAfterRegistration(res.email);
+        formRegistration.resetForm();
+        tabListAutorization.openTab('autorization');
+      })
+      .catch((err) => console.log(err));
+    
+    // 
   }
 );
 const popupAutorization = new PopupWithForm(

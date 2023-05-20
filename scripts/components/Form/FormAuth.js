@@ -9,6 +9,7 @@ export default class FormAuth extends Form {
     this._profileGuest = document.querySelector('.profile_guest');
     this._profileName = document.querySelectorAll('.profile__nickname');
     this._avatar = document.querySelector('.profile__link');
+    this._loginInput = document.querySelector('#email_login');
     this._state = {
     }
   }
@@ -21,8 +22,8 @@ export default class FormAuth extends Form {
     };
   }
 
-  resetForm() {
-    this._form.reset();
+  autoCompleteLoginInputAfterRegistration(email) {
+    this._loginInput.value = email;
   }
 
   _loggedInSettingsForRender() {

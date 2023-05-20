@@ -24,6 +24,10 @@ export default class Form {
     return this._state.inputValues;
   }
 
+  resetForm() {
+    this._form.reset();
+  }
+
   setEventListeners() {
     this._form.addEventListener("submit", (evt) => {
       evt.preventDefault();
