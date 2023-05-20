@@ -13,10 +13,6 @@ export default class FormAuth extends Form {
     }
   }
 
-  storeResponse(res) {
-    this._state.resData = res;
-  }
-
   getBody() {
     super.getInputValues();
     return {

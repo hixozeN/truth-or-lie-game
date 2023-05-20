@@ -38,6 +38,7 @@ const formAutorization = new FormAuth(
         formAutorization.renderPage(localStorage.token);
         profileLinkAvatar.removeEventListener('click', openAuthPopup);
         popupAutorization.close();
+        formAutorization.resetForm();
       })
       .catch((err) => console.log(err));
   }
