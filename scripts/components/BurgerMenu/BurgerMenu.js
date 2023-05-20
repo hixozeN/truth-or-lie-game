@@ -11,7 +11,9 @@ export default class BurgerMenu {
   }
 
   _setEventListener() {
-    this._toggle.addEventListener('click', () => this._closeBurgerMenu());
+    this._toggle.addEventListener('click', () => {
+      this._closeBurgerMenu();
+    });
   }
 
 

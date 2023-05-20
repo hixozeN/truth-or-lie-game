@@ -1,5 +1,5 @@
 import Form from "./Form.js";
-import { openAuthPopup } from '../scripts/index.js';
+import { openAuthPopup } from '../../index.js';
 
 export default class FormAuth extends Form {
   constructor(formName, submitCallback) {
@@ -9,24 +9,29 @@ export default class FormAuth extends Form {
     this._profileGuest = document.querySelector('.profile_type_guest');
     this._profileName = document.querySelectorAll('.profile__nickname');
     this._avatar = document.querySelector('.profile__link');
+    this._loginInput = document.querySelector('#email_login');
     this._state = {
-      resData: {}
     }
   }
 
-  storeResponse(res) {
-    this._state.resData = res;
+  getBody() {
+    super.getInputValues();
+    return {
+      email: this._state.inputValues.email,
+      password: this._state.inputValues.password
+    };
   }
 
-  setLocalStorage() {
-    localStorage.setItem('token', this._state.resData.token);
-    localStorage.setItem('username', this._state.resData.user.username);
+  autoCompleteLoginInputAfterRegistration(email) {
+    this._loginInput.value = email;
   }
 
   _loggedInSettingsForRender() {
     this._profileAuth.classList.add('profile_active');
     this._profileGuest.classList.remove('profile_active');
-    this._profileName.forEach(nickname => nickname.textContent = localStorage.username)
+    this._avatar.removeEventListener('click', openAuthPopup);
+    this._avatar.style.cursor = 'auto';
+    this._profileName.forEach(nickname => nickname.textContent = localStorage.name)
   }
 
   _guestSettingsForRender() {
@@ -43,8 +48,11 @@ export default class FormAuth extends Form {
     super.setEventListeners();
 
     this._buttonLogout.addEventListener('click', () => {
-      delete localStorage.username;
+      delete localStorage.name;
+      delete localStorage.email;
+      delete localStorage.id;
       delete localStorage.token;
+      this._avatar.style.cursor = 'pointer';
       this.renderPage(localStorage.token);
       this._avatar.addEventListener('click', openAuthPopup);
     });
