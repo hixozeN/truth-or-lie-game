@@ -64,9 +64,9 @@
   <section class="section-profile">
     <div class="profile">
       <a href="#" class="profile__link">
-        <img src="./images/unknown.svg" alt="" class="profile__avatar" />
+        <img src="./images/unknown.svg" alt="" class="profile__avatar" id="mainAvatar" />
       </a>
-      <h2 class="profile__nickname"></h2>
+      <h2 class="profile__nickname" id="mainNickname"></h2>
     </div>
   </section>
 
@@ -120,6 +120,16 @@
                     <span class="form__error username-error">
                     </span>
                   </label>
+                  
+                </li>
+                <li class="form__item">
+                  <label class="form__label">
+                    <input class="form__input
+                        form__input_type_login" type="email" name="email" placeholder="Введите e-mail" minlength="2"
+                      maxlength="40" required>
+                    <span class="form__error username-error">
+                    </span>
+                  </label>
                 </li>
                 <li class="form__item">
                   <label class="form__label">
@@ -153,9 +163,9 @@
                 <li class="form__item">
                   <label class="form__label">
                     <input class="form__input
-                        form__input_type_login" type="text" name="username" placeholder="Введите ваш логин" minlength="2"
+                        form__input_type_login" id="email_login" type="e-mail" name="email" placeholder="Введите ваш e-mail" minlength="2"
                       maxlength="40" required>
-                    <span class="form__error username-error">
+                    <span class="form__error email-error">
                     </span>
                   </label>
                 </li>

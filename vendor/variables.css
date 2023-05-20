@@ -4,15 +4,16 @@
   /* Color */
   --color-main: #0f1119;
   
-  --color-second: #8A8887;
+  --color-second: #202031;
   --color-second-20: rgba(138, 136, 135, 0.2);
 
-  --color-alternative: #75AFD4;
+  --color-alternative: #202031;
 
   --color-dark: #080808;
   --color-dark-20: rgba(4, 4, 4, .2);
 
   --color-light: #e0e0e0;
+  --color-light-secondary: #919090;
 
   /* --color-white: #fff; */
 
@@ -26,7 +27,9 @@
   --color-negative: #d44242;
   --color-negative-second: #532222;
 
-  --color-hover: #2E2E2E;
+  --color-button: #563a90;
+
+  --color-hover: #878686;
 
   /* Size */
   

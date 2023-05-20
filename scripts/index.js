@@ -1,11 +1,12 @@
-import { varConfig, popupFormConfig, tabListConfig } from './conf.js';
-import BurgerMenu from './Burger-menu.js';
-import Fact from './Fact.js';
-import { PopupWithFact } from './PopupWithFact.js';
-import PopupWithForm from './PopupWithForm.js';
-import FormAuth from './FormAuth.js';
-import FormReg from './FormReg.js';
-import TabList from './TabList.js';
+import { varConfig, popupFormConfig, tabListConfig } from './utils/conf.js';
+import BurgerMenu from './components/BurgerMenu/BurgerMenu.js';
+import Fact from './components/Fact/Fact.js';
+import { PopupWithFact } from './components/Popup/PopupWithFact.js';
+import PopupWithForm from './components/Popup/PopupWithForm.js';
+import FormAuth from './components/Form/FormAuth.js';
+import FormReg from './components/Form/FormReg.js';
+import TabList from './components/TabList/TabList.js';
+import { api } from './utils/Api.js';
 
 const profileLinkAvatar = document.querySelector('.profile__link');
 const buttonSignIn = document.querySelector('.navigation__link_type_sign-in');
@@ -24,39 +25,38 @@ const popupWithFact = new PopupWithFact(
 const formAutorization = new FormAuth(
   'autorization',
   async () => {
-    popupAutorization.close();
-    await fetch('http://45.146.165.205:3000/auth/login', {
-      headers: {
-        "Content-type": "application/json"
-      },
-      method: "POST",
-      body: JSON.stringify(formAutorization.getInputValues())
-    })
-      .then(res => res.json())
-      .then(data => formAutorization.storeResponse(data))
-
-    formAutorization.setLocalStorage();
-
-    formAutorization.renderPage(localStorage.token);
-    profileLinkAvatar.removeEventListener('click', openAuthPopup);
+    await api.login(formAutorization.getBody())
+      .then( async (res) => {
+        localStorage.setItem('token', res.token);
+        await api.getCurrentUserData()
+          .then((user) => {
+            localStorage.setItem('name', user.data.name);
+            localStorage.setItem('email', user.data.email);
+            localStorage.setItem('id', user.data._id);
+          })
+          .catch((err) => console.log(err));
+        formAutorization.renderPage(localStorage.token);
+        profileLinkAvatar.removeEventListener('click', openAuthPopup);
+        popupAutorization.close();
+        formAutorization.resetForm();
+      })
+      .catch((err) => console.log(err));
   }
 );
 
 const formRegistration = new FormReg(
   'registration',
-  async () => {
-    popupAutorization.close();
-    await fetch('http://45.146.165.205:3000/auth/registration', {
-      headers: {
-        "Content-type": "application/json"
-      },
-      method: "POST",
-      body: JSON.stringify(formRegistration.getInputValues())
-    })
-      .then(res => res.json())
-      .then(data => formRegistration.storeResponse(data))
-
-    popupAutorization.open();
+  () => {
+    console.log(formRegistration.getBody())
+    api.register(formRegistration.getBody())
+      .then((res) => {
+        formAutorization.autoCompleteLoginInputAfterRegistration(res.email);
+        formRegistration.resetForm();
+        tabListAutorization.openTab('autorization');
+      })
+      .catch((err) => console.log(err));
+    
+    // 
   }
 );
 const popupAutorization = new PopupWithForm(

@@ -11,4 +11,13 @@ export default class FormReg extends Form {
   storeResponse(res) {
     this._state.resData = res;
   }
+
+  getBody() {
+    super.getInputValues();
+    return {
+      email: this._state.inputValues.email,
+      name: this._state.inputValues.username,
+      password: this._state.inputValues.password
+    };
+  }
 }

@@ -26,6 +26,15 @@
   align-self: center;
 }
 
+@media screen and (max-width: 1200px) {
+  #mainAvatar {
+    display: none;
+  }
+  #mainNickname {
+    display: none;
+  }
+}
+
 .profile__navigation {
   margin-left: 25px;
 }
@@ -41,3 +50,4 @@
 .profile_active {
   display: flex;
 }
+
