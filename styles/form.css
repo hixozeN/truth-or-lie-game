@@ -21,21 +21,26 @@ min-height: 21px;
 .form__input {
   border: none;
   padding: 10px 0 10px;
-  border-bottom: 1px solid var(--color-black-50);
+  border-bottom: 1px solid var(--color-light);
   width: 100%;
   opacity: 1;
   background-color: var(--color-alternative);
+  color: var(--color-light);
 }
 
 .form__input::placeholder {
-  color: var(--color-black-50);
+  color: var(--color-light-secondary);
 }
 
 .form__label {
   display: block;
   position: relative;
-  color: var(--color-dark);
+  color: var(--color-light);
   min-height: 41px;
+}
+
+.form__label:hover {
+  cursor: pointer;
 }
 
 .form__label:last-of-type {
@@ -44,9 +49,10 @@ min-height: 21px;
 
 .form__button-save {
   align-self: center;
-  background-color: var(--color-main);
+  background-color: var(--color-button);
   color: var(--color-light);
-  font-size: calc(var(--index));
+  font-size: 24px;
+  margin-top: 50px;
   height: 75px;
 }
 

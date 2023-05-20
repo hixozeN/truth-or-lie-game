@@ -32,6 +32,8 @@ export const tabListConfig = {
   formsSelector: '.popup__forms-list'
 }
 
+export const LOCAL_STORAGE_TOKEN_KEY = 'token';
+
 export const facts = [
   {
     question: 'Растений на Земле больше, чем звезд в Нашей Галактике.',
